@@ -8,7 +8,7 @@ export const Nav = styled.nav`
   left: 0;
   display: flex;
   z-index: 2;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   padding: 0 12px;
   background: #050505;
