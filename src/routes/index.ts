@@ -16,7 +16,7 @@ import Location from '../views/location';
 import IRoute from '../__types__/IRoute';
 import { EChildRoutes, EMainRoutes } from '../__types__/ERoutes';
 
-const Routes: IRoute[] = [
+export const Routes: IRoute[] = [
     {
         engName: '',
         plName: '',
@@ -167,4 +167,5 @@ const Routes: IRoute[] = [
     }
 ]
 
-export default Routes;
+export const RoutesFlattenArray = Routes.map(({ subTopics, ...route }) => 
+    subTopics ? [...subTopics, route] : [route]).flat();
