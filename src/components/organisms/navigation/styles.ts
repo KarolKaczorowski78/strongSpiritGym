@@ -1,0 +1,15 @@
+import styled from 'styled-components';
+
+export const Nav = styled.nav`
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  z-index: 2;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+  background: #050505;
+`;
