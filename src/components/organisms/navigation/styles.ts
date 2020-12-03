@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Nav = styled.nav`
   width: 100%;
@@ -12,4 +12,8 @@ export const Nav = styled.nav`
   align-items: center;
   padding: 0 12px;
   background: #050505;
+`;
+
+export const MainNavigationButton = css`
+  height: 100%;
 `;
