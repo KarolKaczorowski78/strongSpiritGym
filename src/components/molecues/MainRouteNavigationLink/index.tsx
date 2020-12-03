@@ -3,9 +3,11 @@ import NavigationLink from '../NavigationLink';
 import IMainRouteNavigationLink from '../../../__types__/IMainRouteNavigationLink';
 import { Container, ButtonStyle, ShowSubTopicsButton, ChildRouteLinksContainer } from './styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ChildRouteNavigationLink from '../ChildRouteNavigationLink';
 import { faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { pathToContent } from '../../../universal/pathToContent';
 import gsap from 'gsap';
+import { EChildRoutes } from '../../../__types__/ERoutes';
 
 const MainRouteNavigationLink: FC<IMainRouteNavigationLink> = ({ to, subTopics }) => {
 
@@ -30,7 +32,7 @@ const MainRouteNavigationLink: FC<IMainRouteNavigationLink> = ({ to, subTopics }
             <FontAwesomeIcon icon={ areChildLinksVisible ? faAngleUp : faAngleDown } />
           </ShowSubTopicsButton>
           <ChildRouteLinksContainer ref={ childRouteLinksContainer }>
-            {/* { subTopics.map(route => <ChildRouteNavigationLink { ...route } />) } */}
+            { subTopics.map(({ path }) => <ChildRouteNavigationLink to={ path as EChildRoutes } />) }
           </ChildRouteLinksContainer>
         </>
       }

@@ -1,7 +1,7 @@
 import { EChildRoutes, EMainRoutes } from '../__types__/ERoutes';
 import { capitalizeString } from './capitalizeString';
 
-export const pathToContent = (path: EChildRoutes | EMainRoutes, capitalized: boolean) => {
+export const pathToContent = (path: string, capitalized: boolean) => {
 
   if (path.length === 0) return '';
 

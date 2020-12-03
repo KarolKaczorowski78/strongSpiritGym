@@ -14,7 +14,7 @@ export enum EChildRoutes {
   POLAND = '/locations/poland',
   USA = '/locations/usa',
   UK = '/locations/uk',
-  MMA = '/individual-programs/mma',
+  MMA = '/individual-programs/MMA',
   POWERLIFTING = '/individual-programs/powerlifting',
   STAND_UP = '/individual-programs/stand-up',
   GROUND_GAME = '/individual-programs/ground-game',
