@@ -3,7 +3,7 @@ import Button from '../../atoms/button';
 import Div from '../../atoms/div';
 
 export const Container = styled(Div)`
-  height: 100%;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -16,7 +16,7 @@ export const Nav = styled.nav`
 `;
 
 export const MainNavigationButton = css`
-  height: 100%;
+
 `;
 
 export const NavigationLinksContainer = styled(Div)`
