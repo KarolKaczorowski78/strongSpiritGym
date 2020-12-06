@@ -14,6 +14,10 @@ export const Nav = styled.nav`
   align-items: center;
   padding: 0 12px;
   background: #050505;
+  min-width: 200px;
+  @media (max-width: ${EBreakpoints.NAV_BREAK}) {
+    justify-content: space-between;
+  }
 `;
 
 export const MainNavigationButton = css`
@@ -32,7 +36,7 @@ export const NavigationLinksContainer = styled(Div)`
   }
 `;
 
-export const NavigationLinksContainerStatic = styled(Div)`
+export const NavigationLinksContainerStatic = styled(Div)<{ visible: boolean }>`
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -44,5 +48,6 @@ export const NavigationLinksContainerStatic = styled(Div)`
     flex-direction: column;
     height: calc(100vh - 100px);
     justify-content: flex-start;
+    clip-path: circle(${({ visible }) => visible ? '1500px' : '0px'} at 0% 0%);
   }
 ;`

@@ -1,20 +1,28 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
+import { BooleansContext } from '../../../contexts/booleansContext';
 import { Nav, NavigationLinksContainer, NavigationLinksContainerStatic } from './styles';
 import { EMainRoutes } from '../../../__types__/ERoutes';
 import { Routes } from '../../../routes';
 import MainRouteNavigationLink from '../../molecues/MainRouteNavigationLink';
+import ToggleNavigationLinksVisibilityButton from '../../molecues/ToggleNavigationVisibilityButton';
+import Logo from '../../molecues/Logo';
 
 const Navigation: FC = () => {
+
+  const { navigationLinksVisibility } = useContext(BooleansContext);
+
   return (
     <Nav>
+      <Logo linkedToHome={ true } size={ 2.5 } />
       <NavigationLinksContainer>
-        <NavigationLinksContainerStatic>
+        <NavigationLinksContainerStatic visible={ navigationLinksVisibility }>
           { 
             Routes.slice(1, -1).map(({ path, subTopics }) => 
               <MainRouteNavigationLink subTopics={ subTopics } to={ path as EMainRoutes } />)
           }
         </NavigationLinksContainerStatic>
       </NavigationLinksContainer>
+      <ToggleNavigationLinksVisibilityButton />
     </Nav>
   )
 }
