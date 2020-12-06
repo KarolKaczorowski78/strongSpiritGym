@@ -7,6 +7,7 @@ const Button = styled(ButtonProto)<{ styling?: FlattenSimpleInterpolation }>`
   background: none;
   border: none;
   padding: none;
+  ${({ styling }) => styling && styling};
 `;
 
 // the purpuse of this component is to change boolean type states passed in props
