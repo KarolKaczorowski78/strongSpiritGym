@@ -5,4 +5,5 @@ export enum EBreakpoints {
   TABLET_SMALL = '600px',
   MOBILE_BIG = '380px',
   MOBILE_SMALL = '320px',
+  NAV_BREAK = '950px',
 }

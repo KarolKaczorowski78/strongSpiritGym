@@ -1,13 +1,17 @@
 import styled, { css } from 'styled-components';
 import Button from '../../atoms/button';
 import Div from '../../atoms/div';
+import { EBreakpoints } from '../../../__types__/EBreakpoints';
 
 export const Container = styled(Div)`
   height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
+  vertical-align: middle;
+  line-height: 100px;
+  @media (max-width: ${EBreakpoints.NAV_BREAK}) {
+    height: auto;
+    line-height: normal;
+  }
 `;
 
 export const ButtonStyle = css`
@@ -30,4 +34,11 @@ export const ChildRouteLinksContainer = styled(Div)`
   border: 1px solid black;
   width: 95%;
   text-align: center;
+  @media (max-width: ${EBreakpoints.NAV_BREAK}) {
+    position: static;
+    background: none;
+    & > a {
+      color: white;
+    }
+  }
 `;
