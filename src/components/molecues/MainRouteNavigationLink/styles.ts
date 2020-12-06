@@ -34,6 +34,7 @@ export const ChildRouteLinksContainer = styled(Div)`
   border: 1px solid black;
   width: 95%;
   text-align: center;
+  line-height: normal;
   @media (max-width: ${EBreakpoints.NAV_BREAK}) {
     position: static;
     background: none;
