@@ -1,4 +1,3 @@
-import { EChildRoutes, EMainRoutes } from '../__types__/ERoutes';
 import { capitalizeString } from './capitalizeString';
 
 export const pathToContent = (path: string, capitalized: boolean) => {

@@ -5,11 +5,10 @@ import { Container, ButtonStyle, ShowSubTopicsButton, ChildRouteLinksContainer }
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ChildRouteNavigationLink from '../ChildRouteNavigationLink';
 import { faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons';
-import { pathToContent } from '../../../universal/pathToContent';
 import gsap from 'gsap';
-import { EChildRoutes } from '../../../__types__/ERoutes';
+import { EMainRoutes } from '../../../__types__/ERoutes';
 
-const MainRouteNavigationLink: FC<IMainRouteNavigationLink> = ({ to, subTopics }) => {
+const MainRouteNavigationLink: FC<IMainRouteNavigationLink> = ({ engName, plName, subTopics, path }) => {
 
   const [areChildLinksVisible, setAreChildRoutesVisible] = useState<boolean>(false);
   const childRouteLinksContainer = useRef<HTMLDivElement>(null);
@@ -23,16 +22,15 @@ const MainRouteNavigationLink: FC<IMainRouteNavigationLink> = ({ to, subTopics }
 
   return (
     <Container>
-      <NavigationLink styling={ ButtonStyle } to={ to }>
-        { pathToContent(to, true) }&nbsp;
-      </NavigationLink>
+      <NavigationLink styling={ ButtonStyle }to={ path as EMainRoutes } plName={ plName } engName={ engName }
+      />
       { subTopics && 
         <>
           <ShowSubTopicsButton onClick={ handleClick }>
             <FontAwesomeIcon icon={ areChildLinksVisible ? faAngleUp : faAngleDown } />
           </ShowSubTopicsButton>
           <ChildRouteLinksContainer ref={ childRouteLinksContainer }>
-            { subTopics.map(({ path }) => <ChildRouteNavigationLink to={ path as EChildRoutes } />) }
+            { subTopics.map((childRoute) => <ChildRouteNavigationLink { ...childRoute } />) }
           </ChildRouteLinksContainer>
         </>
       }

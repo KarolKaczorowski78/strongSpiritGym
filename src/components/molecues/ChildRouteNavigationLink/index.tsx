@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { css } from 'styled-components';
 import { EChildRoutes } from '../../../__types__/ERoutes';
 import NavigationLink from '../NavigationLink';
-import { pathToContentChildRoute } from '../../../universal/pathToContentChildRoute';
+import IChildRoute from '../../../__types__/IChildRoute';
 
 const ButtonStyling = css`
   color: black;
@@ -11,11 +11,14 @@ const ButtonStyling = css`
   margin: 5px 0;
 `;
 
-const ChildRouteNavigationLink: FC<{ to: EChildRoutes }> = ({ to }) => {
+const ChildRouteNavigationLink: FC<IChildRoute> = ({ path, plName, engName }) => {
   return (
-    <NavigationLink to={ to } styling={ ButtonStyling }>
-      { pathToContentChildRoute(to) }
-    </NavigationLink>
+    <NavigationLink 
+      to={ path as EChildRoutes } 
+      styling={ ButtonStyling } 
+      plName={ plName } 
+      engName={ engName }
+    />
   )
 }
 

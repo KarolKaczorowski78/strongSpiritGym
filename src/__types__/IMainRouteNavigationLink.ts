@@ -1,7 +1,5 @@
-import { EChildRoutes, EMainRoutes } from './ERoutes';
-import IChildRoute from './IChildRoute';
+import IRoute from './IRoute';
 
-export default interface IMainRouteNavigationLink {
-  to: EChildRoutes | EMainRoutes,
-  subTopics?: IChildRoute[],
+export default interface IMainRouteNavigationLink extends IRoute {
+  
 }
