@@ -20,10 +20,9 @@ const LogoStyle = styled(Span)<{ size: number }>`
   color: lightgrey;
   margin-right: 100px;
   ::after {
-    width: 100px;
     left: 110%;
     top: 5px;
-    content: 'fight club';
+    content: 'fight \n club';
     text-decoration: underline;
     font-family: initial;
     position: absolute;
@@ -31,6 +30,7 @@ const LogoStyle = styled(Span)<{ size: number }>`
     font-size: 37.5%;
   }
 `;
+
 
 const Logo:FC<ILogo> = ({ linkedToHome, size }) => {
   return (
