@@ -6,10 +6,14 @@ import { Routes } from '../../../routes';
 import MainRouteNavigationLink from '../../molecues/MainRouteNavigationLink';
 import ToggleNavigationLinksVisibilityButton from '../../molecues/ToggleNavigationVisibilityButton';
 import Logo from '../../molecues/Logo';
+import LanguageSwitcher from '../../molecues/LanguageSwitcher';
+import { EBreakpoints } from '../../../__types__/EBreakpoints';
+import { ECssUnits } from '../../../__types__/ECssUnits';
+import { removeUnitAndParseInt } from '../../../universal/removeUnitAndParseInt';
 
 const Navigation: FC = () => {
 
-  const { navigationLinksVisibility } = useContext(PrimitivesContext);
+  const { navigationLinksVisibility, windowWidth } = useContext(PrimitivesContext);
 
   return (
     <Nav>
@@ -20,9 +24,12 @@ const Navigation: FC = () => {
             Routes.slice(1, -1).map(({ path, subTopics }) => 
               <MainRouteNavigationLink subTopics={ subTopics } to={ path as EMainRoutes } />)
           }
+          <LanguageSwitcher />
         </NavigationLinksContainerStatic>
       </NavigationLinksContainer>
-      <ToggleNavigationLinksVisibilityButton />
+      { 
+        windowWidth <= removeUnitAndParseInt(EBreakpoints.NAV_BREAK, ECssUnits.pixels) && 
+        <ToggleNavigationLinksVisibilityButton /> }
     </Nav>
   )
 }

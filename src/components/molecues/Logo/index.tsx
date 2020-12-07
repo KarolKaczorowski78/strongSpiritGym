@@ -18,7 +18,9 @@ const LogoStyle = styled(Span)<{ size: number }>`
   z-index: 2;
   color: red;
   color: lightgrey;
+  margin-right: 100px;
   ::after {
+    width: 100px;
     left: 110%;
     top: 5px;
     content: 'fight club';
