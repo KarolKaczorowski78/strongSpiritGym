@@ -1,11 +1,14 @@
 import React, { createContext, FC, ReactNode, useEffect, useState } from 'react';
+import { ELanguages } from '../__types__/ELanguages';
 import IPrimitivesContext from '../__types__/IPrimitivesContext';
 
 export const defaultValue: IPrimitivesContext = {
   navigationLinksVisibility: false,
   setNavigationLinksVisibility: () => {  },
-  windowScrollValue: window.scrollY,
-  setWindowScrollValue: () => {  },
+  windowWidth: window.innerWidth,
+  setWindowWidth: () => {  },
+  currentLanguage: ELanguages.ENGLISH,
+  setCurrentLanguage: () => {  },
 }
 
 export const PrimitivesContext = createContext<IPrimitivesContext>(defaultValue);
@@ -13,17 +16,20 @@ export const PrimitivesContext = createContext<IPrimitivesContext>(defaultValue)
 export const PrimitivesContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
 
   const [navigationVisibility, setNavigationVisibility] = useState<boolean>(false);
-  const [windowScrollValue, setWindowScrollValue] = useState<number>(0);
+  const [windowWidth, setWindowWidth] = useState<number>(defaultValue.windowWidth);
+  const [currentLanguage, setCurrentLanguage] = useState<ELanguages>(defaultValue.currentLanguage)
 
   const providerValue: IPrimitivesContext = {
     navigationLinksVisibility: navigationVisibility,
     setNavigationLinksVisibility: setNavigationVisibility,
-    windowScrollValue: windowScrollValue,
-    setWindowScrollValue: setWindowScrollValue,
+    windowWidth: windowWidth,
+    setWindowWidth: setWindowWidth,
+    currentLanguage: currentLanguage,
+    setCurrentLanguage: setCurrentLanguage,
   }
 
   useEffect(() => { 
-    window.addEventListener('scroll', () => setWindowScrollValue(() => window.scrollY)); 
+    window.addEventListener('resize', () => setWindowWidth(() => window.innerWidth)); 
   }, []);
 
   return (

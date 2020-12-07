@@ -1,8 +1,11 @@
 import { Dispatch, SetStateAction } from "react";
+import { ELanguages } from './ELanguages';
 
 export default interface IPrimitivesContext {
   navigationLinksVisibility: boolean,
   setNavigationLinksVisibility: Dispatch<SetStateAction<boolean>>,
-  windowScrollValue: number,
-  setWindowScrollValue: Dispatch<SetStateAction<number>>,
+  windowWidth: number,
+  setWindowWidth: Dispatch<SetStateAction<number>>,
+  currentLanguage: ELanguages,
+  setCurrentLanguage: Dispatch<SetStateAction<ELanguages>>,
 }
