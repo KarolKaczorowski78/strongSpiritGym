@@ -37,6 +37,7 @@ export const NavigationLinksContainer = styled(Div)`
 `;
 
 export const NavigationLinksContainerStatic = styled(Div)<{ visible: boolean }>`
+  transition: ${({ visible }) => `clip-path .7s ${visible ? 'ease-out' : 'ease-in'}`};
   width: 100%;
   display: flex;
   justify-content: space-evenly;

@@ -1,4 +1,4 @@
-import React, { FC, useContext } from 'react';
+import React, { FC, useContext, useEffect } from 'react';
 import { PrimitivesContext } from '../../../contexts/primitivesContext';
 import { Nav, NavigationLinksContainer, NavigationLinksContainerStatic } from './styles';
 import { Routes } from '../../../routes';
@@ -9,10 +9,16 @@ import LanguageSwitcher from '../../molecues/LanguageSwitcher';
 import { EBreakpoints } from '../../../__types__/EBreakpoints';
 import { ECssUnits } from '../../../__types__/ECssUnits';
 import { removeUnitAndParseInt } from '../../../universal/removeUnitAndParseInt';
+import { useLocation } from 'react-router-dom';
 
 const Navigation: FC = () => {
 
-  const { navigationLinksVisibility, windowWidth } = useContext(PrimitivesContext);
+  const { pathname } = useLocation();
+  const { navigationLinksVisibility, setNavigationLinksVisibility, windowWidth } = useContext(PrimitivesContext);
+
+  useEffect(() => {
+    setNavigationLinksVisibility(() => false);
+  }, [pathname])
 
   return (
     <Nav>
