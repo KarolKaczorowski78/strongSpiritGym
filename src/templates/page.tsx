@@ -1,7 +1,7 @@
-import React, { FC, ReactNode, useEffect } from 'react';
+import React, { FC, ReactNode, useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import Div from '../components/atoms/div';
-import {  } from '../contexts/primitivesContext';
+import { PrimitivesContext } from '../contexts/primitivesContext';
 
 const PageTemplate = styled(Div)`
   width: 100%;
@@ -12,8 +12,10 @@ const PageTemplate = styled(Div)`
 
 const Page: FC<{ children: ReactNode }> = ({ children }) => {
 
+  const { setWindowScrollValue } = useContext(PrimitivesContext);
+
   useEffect(() => {
-    window.scrollTo(0, 0);
+    setWindowScrollValue(() => 0);
   }, [])
 
   return (
