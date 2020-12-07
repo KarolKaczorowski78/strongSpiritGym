@@ -1,6 +1,7 @@
 import React, { FC, ReactNode, useEffect } from 'react';
 import styled from 'styled-components';
 import Div from '../components/atoms/div';
+import {  } from '../contexts/primitivesContext';
 
 const PageTemplate = styled(Div)`
   width: 100%;

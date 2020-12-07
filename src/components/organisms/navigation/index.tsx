@@ -1,5 +1,5 @@
 import React, { FC, useContext } from 'react';
-import { BooleansContext } from '../../../contexts/booleansContext';
+import { PrimitivesContext } from '../../../contexts/primitivesContext';
 import { Nav, NavigationLinksContainer, NavigationLinksContainerStatic } from './styles';
 import { EMainRoutes } from '../../../__types__/ERoutes';
 import { Routes } from '../../../routes';
@@ -9,7 +9,7 @@ import Logo from '../../molecues/Logo';
 
 const Navigation: FC = () => {
 
-  const { navigationLinksVisibility } = useContext(BooleansContext);
+  const { navigationLinksVisibility } = useContext(PrimitivesContext);
 
   return (
     <Nav>

@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import { BooleansContext } from '../../../contexts/booleansContext';
+import { PrimitivesContext } from '../../../contexts/primitivesContext';
 import SwitchButton from '../SwitchButton';
 import { ButtonStyle, Hamburger } from './styles';
 
 const ToggleNavigationVisibilityButton = () => {
 
-  const { navigationLinksVisibility ,setNavigationLinksVisibility } = useContext(BooleansContext);
+  const { navigationLinksVisibility ,setNavigationLinksVisibility } = useContext(PrimitivesContext);
 
   return (
     <SwitchButton setState={ setNavigationLinksVisibility } styling={ ButtonStyle }>
