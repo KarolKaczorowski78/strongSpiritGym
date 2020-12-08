@@ -130,7 +130,7 @@ export const Routes: IRoute[] = [
         subTopics: [
             {
                 engName: 'Training timer',
-                plName: 'Czasomierz treningowy',
+                plName: 'Stoper treningowy',
                 path: EChildRoutes.TIMER,
                 exact: true,
                 component: Timer,
@@ -144,7 +144,7 @@ export const Routes: IRoute[] = [
             },
             {
                 engName: 'Sport adviser',
-                plName: 'Doradca treningowy',
+                plName: 'Doradca sportowy',
                 path: EChildRoutes.ADVISOR,
                 exact: true,
                 component: Advisor,
