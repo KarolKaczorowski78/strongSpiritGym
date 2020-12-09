@@ -24,7 +24,7 @@ export const Offers: IOffer[] = [
   {
     headling: {
       eng: 'Full-stack martial arts training',
-      pl: 'Zróżnicowane treningi sportów walki',
+      pl: 'Treningi sportów walki',
     },
     p: {
       eng: loremIpsum,
@@ -40,7 +40,7 @@ export const Offers: IOffer[] = [
   {
     headling: {
       eng: 'Strength and conditioning preparation',
-      pl: 'Przygotowanie fizyczne pod okiem najlepszych',
+      pl: 'Przygotowanie fizyczne',
     },
     p: {
       eng: loremIpsum,
