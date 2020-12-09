@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Acme', sans-serif;
     margin: 0;
     padding: 0;
+    background: lightgrey;
   }
 
   html {
