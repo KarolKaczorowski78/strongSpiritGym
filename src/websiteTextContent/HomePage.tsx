@@ -1,6 +1,9 @@
 import IOffer from '../__types__/IOffer';
 import { EChildRoutes } from '../__types__/ERoutes';
 import IStatisticsCounter from '../__types__/IStatisticCounter';
+import MartialArtsOfferImg from '../img/homePage/martialArtsOffer.jpg';
+import StrengthAndConditioningImg from '../img/homePage/strengthOffer.jpg';
+import IndividualProgramsImg from '../img/homePage/individualOffer.jpg';
 
 const loremIpsum = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
 
@@ -27,7 +30,7 @@ export const Offers: IOffer[] = [
       eng: loremIpsum,
       pl: loremIpsum,
     },
-    imgSrc: '',
+    imgSrc: MartialArtsOfferImg,
     linkContent: {
       eng: 'Lookup schedule',
       pl: 'Zobacz grafik',
@@ -43,7 +46,7 @@ export const Offers: IOffer[] = [
       eng: loremIpsum,
       pl: loremIpsum,
     },
-    imgSrc: '',
+    imgSrc: StrengthAndConditioningImg,
     linkContent: {
       eng: 'Lookup classes',
       pl: 'Zobacz grupy',
@@ -59,7 +62,7 @@ export const Offers: IOffer[] = [
       eng: loremIpsum,
       pl: loremIpsum,
     },
-    imgSrc: '',
+    imgSrc: IndividualProgramsImg,
     linkContent: {
       eng: 'Lookup offer',
       pl: 'Zobacz ofertę',
