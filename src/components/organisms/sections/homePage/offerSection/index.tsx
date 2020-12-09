@@ -3,6 +3,7 @@ import { PrimitivesContext } from '../../../../../contexts/primitivesContext';
 import { SectionWithId }  from '../../../../atoms/section';
 import { Offers } from '../../../../../websiteTextContent/HomePage';
 import OfferAdvertisement from '../../../../molecues/OfferAdvertisement';
+import { ESectionIds } from '../../../../../__types__/ESectionsIds';
 
 export default function OfferSection() {
   
@@ -10,7 +11,7 @@ export default function OfferSection() {
   const isEnglish = currentLanguage === 'ENGLISH';
 
   return (
-    <SectionWithId id="offer-section">
+    <SectionWithId id={ ESectionIds.HOMEPAGE_OFFERS }>
       {/* 1. Mapped offers */}
       { Offers.map(({ headling, p, linkContent, ...rest }) => 
         <OfferAdvertisement 
