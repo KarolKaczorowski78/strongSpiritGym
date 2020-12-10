@@ -6,7 +6,6 @@ const PageTemplate = styled(Div)`
   width: 100%;
   height: auto;
   min-height: 100vh;
-  padding-top: 100px;
 `;
 
 const Page: FC<{ children: ReactNode }> = ({ children }) => {
