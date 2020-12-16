@@ -10,9 +10,14 @@ const Button = styled(ButtonProto)<{ styling: FlattenSimpleInterpolation }>`
 const ScrollToSectionButton: FC<IScrollToSectionButton> = ({ children, styling, targetSection }) => {
   
   const handleClick = () => {
-    const targetElement = document.querySelector(`#${targetSection}`);
+    const targetElement: HTMLElement | null = document.querySelector(`#${targetSection}`);
 
-    targetElement && targetElement.scrollIntoView({ block: 'start', behavior: 'smooth', })
+    targetElement && window.scrollTo({ 
+      top: targetElement.offsetTop - 100,
+      behavior: 'smooth',
+    })
+
+    // targetElement && targetElement.scrollIntoView({ block: 'start', behavior: 'smooth', })
   }
 
   return (

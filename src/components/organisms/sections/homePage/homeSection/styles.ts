@@ -2,13 +2,17 @@ import styled, { css } from 'styled-components';
 import H1Proto from '../../../../atoms/h1';
 import ImgProto from '../../../../atoms/img';
 import SpanProto from '../../../../atoms/span';
+import { EBreakpoints } from '../../../../../__types__/EBreakpoints';
 
 export const H1 = styled(H1Proto)`
   font-size: 4rem;
   text-transform: uppercase;
   text-shadow: 0 0 10px black;
   color: lightgrey;
-  margin-top: 100px;
+  margin: 0;
+  @media (max-width: ${EBreakpoints.TABLET_SMALL}) {
+    font-size: 2.8rem;
+  }
 `;
 
 export const Span = styled(SpanProto)`
