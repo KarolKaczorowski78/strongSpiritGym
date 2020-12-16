@@ -20,7 +20,7 @@ export default function HomeSection() {
   const isEnglish = currentLanguage === 'ENGLISH';
 
   return (
-    <SectionWithId id={ ESectionIds.HOMEPAGE_HOME } styling={ css`padding-top: 110px` }>
+    <SectionWithId id={ ESectionIds.HOMEPAGE_HOME } styling={ css`padding: 110px 10px 0` }>
       <Img 
         src={ windowWidth > removeUnitAndParseInt(EBreakpoints.TABLET_SMALL, ECssUnits.pixels) ? 
           IntroImage : IntroImageSmall } 
