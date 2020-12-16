@@ -16,8 +16,6 @@ const ScrollToSectionButton: FC<IScrollToSectionButton> = ({ children, styling, 
       top: targetElement.offsetTop - 100,
       behavior: 'smooth',
     })
-
-    // targetElement && targetElement.scrollIntoView({ block: 'start', behavior: 'smooth', })
   }
 
   return (

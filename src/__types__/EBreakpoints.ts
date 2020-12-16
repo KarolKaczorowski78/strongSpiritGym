@@ -7,4 +7,5 @@ export enum EBreakpoints {
   MOBILE_SMALL = '320px',
   NAV_BREAK = '1100px',
   OFFER_ADVERTISEMENT_BREAK = '900px',
+  GROUP_TRAININGS_INTRO_BREAK = '1200px',
 }
