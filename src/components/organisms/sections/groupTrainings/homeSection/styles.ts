@@ -1,7 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 import Div from '../../../../atoms/div';
 import ImgProto from '../../../../atoms/img';
-import { EBreakpoints } from '../../../../../__types__/EBreakpoints';
 
 const arrowAnimation = keyframes`
   from {

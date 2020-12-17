@@ -4,4 +4,5 @@ const Img = styled.img`
 
 `;
 
+
 export default Img;
