@@ -10,7 +10,7 @@ const Schedule = () => {
 
   const { currentLanguage } = useContext(PrimitivesContext);
   const isEnglish = currentLanguage === 'ENGLISH';
-  console.log();
+
   return (
     <TableContainer>
         <Table cellSpacing="0">
