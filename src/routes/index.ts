@@ -6,7 +6,7 @@ import FreePerks from '../views/freePerks';
 import NotFound from '../views/404';
 import JoinUs from '../views/joinUs';
 import Schedule from '../views/schedule';
-import Classes from '../views/classes';
+// import Classes from '../views/classes';
 import Pricing from '../views/pricing';
 import IndividualProgram from '../views/individualProgram';
 import Timer from '../views/timer';
@@ -38,13 +38,13 @@ export const Routes: IRoute[] = [
                 exact: true,
                 component: Schedule,
             },
-            {
-                engName: 'Classes',
-                plName: 'Zajęcia',
-                path: EChildRoutes.CLASSES,
-                exact: true,
-                component: Classes,
-            },
+            // {
+            //     engName: 'Classes',
+            //     plName: 'Zajęcia',
+            //     path: EChildRoutes.CLASSES,
+            //     exact: true,
+            //     component: Classes,
+            // },
             {
                 engName: 'Pricing',
                 plName: 'Cennik',
