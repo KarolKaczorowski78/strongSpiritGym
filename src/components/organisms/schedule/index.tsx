@@ -12,7 +12,7 @@ const Schedule = () => {
 
   return (
     <TableContainer>
-        <Table>
+        <Table cellSpacing="0">
           <tbody>
             <tr>
               <td></td>

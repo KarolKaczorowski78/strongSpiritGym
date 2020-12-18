@@ -3,8 +3,9 @@ import Div from '../../atoms/div';
 
 export const TableContainer = styled(Div)`
   width: 100%;
-  height: auto;
+  height: calc(100vh - 200px);
   overflow: auto;
+  padding: 0 10px;
 `;
 
 export const Table = styled.table`
