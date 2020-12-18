@@ -33,7 +33,7 @@ export const ClassesSection: IClassSection[] = [
       pl: 'Mieszane sztuki walki',
     },
     p: {
-      eng: 'All martial arts compined inside one, structured program.',
+      eng: 'All martial arts combined into one, structured program.',
       pl: 'Wszystkie sztuki walki wlaczone w jeden, uporzadkowany program.',
     },
     strengths: [

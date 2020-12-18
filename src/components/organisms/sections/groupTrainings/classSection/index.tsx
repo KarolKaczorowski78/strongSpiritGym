@@ -44,6 +44,7 @@ const ClassSection: FC<IClassSection> = ({ id, headling, img, p, strengths, word
             }
           </StrengthsList>
           <FancyLink 
+            fontSizeRem={ 1 }
             linkPath={ EChildRoutes.SCHEDULE } 
             linkContent={ isEnglish ? 'See in the schedule' : 'Zobacz w planie' }
           />
