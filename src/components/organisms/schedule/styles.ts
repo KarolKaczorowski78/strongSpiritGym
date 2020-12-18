@@ -1,0 +1,20 @@
+import styled from 'styled-components';
+import Div from '../../atoms/div';
+
+export const TableContainer = styled(Div)`
+  width: 100%;
+  height: auto;
+  overflow: auto;
+`;
+
+export const Table = styled.table`
+  margin: 0 auto;
+  th, td {
+    border: 1px solid lightgrey;
+    width: auto;
+    height: 50px;
+    min-width: 120px;
+    text-align: center;
+    font-size: 100%;
+  }
+`;
