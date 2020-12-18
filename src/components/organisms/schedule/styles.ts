@@ -17,5 +17,6 @@ export const Table = styled.table`
     min-width: 120px;
     text-align: center;
     font-size: 100%;
+    position: relative;
   }
 `;

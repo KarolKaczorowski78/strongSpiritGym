@@ -4,12 +4,13 @@ import { Table, TableContainer } from './styles';
 import { WeekDays } from '../../../websiteTextContent/Schedule';
 import { exampleSchedule } from '../../../ExampleScheduleData';
 import { EGroupTrainingsHours } from '../../../__types__/EGroupTrainingsHours';
+import BookClassWorkoutButton from '../../molecues/BookClassWorkoutButton';
 
 const Schedule = () => {
 
   const { currentLanguage } = useContext(PrimitivesContext);
   const isEnglish = currentLanguage === 'ENGLISH';
-
+  console.log();
   return (
     <TableContainer>
         <Table cellSpacing="0">
@@ -25,6 +26,7 @@ const Schedule = () => {
                   { row.map((workout, i2) => 
                     <td key={ i2 }>
                       { workout }
+                      { (new Date().getDay() < i2 + 1 && workout) && <BookClassWorkoutButton /> }
                     </td>) }
                 </tr>  
               )
