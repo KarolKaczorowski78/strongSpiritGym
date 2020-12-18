@@ -6,6 +6,21 @@ import { exampleSchedule } from '../../../ExampleScheduleData';
 import { EGroupTrainingsHours } from '../../../__types__/EGroupTrainingsHours';
 import BookClassWorkoutButton from '../../molecues/BookClassWorkoutButton';
 
+const isBookable = (hourIndex: number, dayIndex: number) => {
+  const today = new Date();
+  const day = today.getDay();
+  const hour = today.getHours();
+  const hoursValues = Object.values(EGroupTrainingsHours) as string[];
+  const hourOfWorkout = parseInt(hoursValues[hourIndex].slice(0, hoursValues.indexOf(':')))
+
+  if (day < dayIndex + 1) {
+    return true;
+  } else if (day === dayIndex + 1 && hourOfWorkout > hour) {
+    return true
+  }
+  return false;
+}
+
 const Schedule = () => {
 
   const { currentLanguage } = useContext(PrimitivesContext);
@@ -26,7 +41,7 @@ const Schedule = () => {
                   { row.map((workout, i2) => 
                     <td key={ i2 }>
                       { workout }
-                      { (new Date().getDay() < i2 + 1 && workout) && <BookClassWorkoutButton /> }
+                      { (isBookable(i, i2) && workout) && <BookClassWorkoutButton /> }
                     </td>) }
                 </tr>  
               )
