@@ -1,15 +1,6 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css } from 'styled-components';
 import Div from '../../../../atoms/div';
 import ImgProto from '../../../../atoms/img';
-
-const arrowAnimation = keyframes`
-  from {
-    transform: translateY(-7px);
-  }
-  to {
-    transform: translateY(7px);
-  }
-`;
 
 export const SectionStyling = css`
   display: flex;
@@ -55,17 +46,4 @@ export const Img = styled(ImgProto)`
   width: auto;
   height: 100%;
   object-fit: contain;
-`;
-
-export const ButtonStyling = css`
-  font-size: 1.25rem;
-  text-transform: uppercase;
-  position: relative;
-  text-align: center;
-  font-weight: bold;
-  & > svg {
-    display: block;
-    margin: 5px auto;
-    animation: ${arrowAnimation} .8s ease-out infinite;
-  }
 `;
