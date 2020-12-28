@@ -8,4 +8,8 @@ export enum ESectionIds {
   GROUP_WORKOUTS_BOXING = 'group-boxing',
   GROUP_WORKOUTS_CROSSFIT = 'group-crossfit',
   GROUP_WORKOUTS_SCHEDULE = 'group-schedule',
+  LOCATIONS_HOME = 'locations-home',
+  LOCATIONS_PL = 'locations-pl',
+  LOCATIONS_USA = 'locations-usa',
+  LOCATIONS_BR = 'locations-br',
 }
