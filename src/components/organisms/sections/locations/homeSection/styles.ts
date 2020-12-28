@@ -29,7 +29,6 @@ export const Img = styled(ImgProto)`
 `;
 
 export const SectionStyling = css`
-  margin-top: 100px;
   height: calc(100vh - 100px);
   min-height: 400px;
 `;

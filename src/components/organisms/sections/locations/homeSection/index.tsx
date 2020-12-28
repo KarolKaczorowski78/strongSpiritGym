@@ -23,6 +23,7 @@ export default function HomeSection() {
         <ScrollToSectionButtonArrow 
           targetSection={ ESectionIds.LOCATIONS_PL }
           content={ isEnglish ? button.eng : button.pl }
+          parentId="locations-wrapper"
         />
       </TextContainer>
       <Img src={ HomeImg } alt="" />
