@@ -27,11 +27,12 @@ const ButtonStyling = css`
   }
 `;
 
-const ScrollToSectionButtonArrow: FC<IScrollToSectionButtonArrow> = ({ targetSection, content }) => {
+const ScrollToSectionButtonArrow: FC<IScrollToSectionButtonArrow> = ({ targetSection, content, parentId }) => {
   return (
     <ScrollToSectionButton
       styling={ ButtonStyling }
       targetSection={ targetSection }
+      parentId={ parentId }
     >
       { content }
       <FontAwesomeIcon icon={ faChevronDown } />
