@@ -6,6 +6,9 @@ export default interface IPrimitivesContext {
   setNavigationLinksVisibility: Dispatch<SetStateAction<boolean>>,
   windowWidth: number,
   setWindowWidth: Dispatch<SetStateAction<number>>,
+  windowHeight: number,
+  setWindowHeight: Dispatch<SetStateAction<number>>,
   currentLanguage: ELanguages,
   setCurrentLanguage: Dispatch<SetStateAction<ELanguages>>,
+  isTouchDevice: boolean, 
 }
