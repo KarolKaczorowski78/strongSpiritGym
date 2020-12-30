@@ -1,11 +1,11 @@
 import { FC, useEffect, useState } from 'react';
-import { ESectionIds } from '../__types__/ESectionsIds';
 import { scrollToSection } from '../universal/galleryPageTemplateMethods';
+import IGalleryPage from '../__types__/IGalleryPage';
 
-const GalleryPageTouch: FC<{ sectionsIds: ESectionIds[] }> = ({ sectionsIds }) => {
+
+const GalleryPageTouch: FC<IGalleryPage> = ({ sectionsIds, setCurrSectionIndex, currSectionIndex }) => {
 
   const [touchStartY, setTouchStartY] = useState<number>(0)
-  const [currSectionIndex, setCurrSectionIndex] = useState<number>(0);
 
   const handleTouchStart = (e: TouchEvent) => {
     const newTouchStartY = e.changedTouches[0].clientY;
@@ -21,7 +21,6 @@ const GalleryPageTouch: FC<{ sectionsIds: ESectionIds[] }> = ({ sectionsIds }) =
   }
 
   useEffect(() => {
-    console.log(sectionsIds[currSectionIndex])
     scrollToSection(sectionsIds[currSectionIndex])
   }, [currSectionIndex])
 

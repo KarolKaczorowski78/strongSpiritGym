@@ -1,10 +1,8 @@
-import { FC, useEffect, useState } from 'react';
-import { ESectionIds } from '../__types__/ESectionsIds';
+import { FC, useEffect } from 'react';
 import { scrollToSection } from '../universal/galleryPageTemplateMethods';
+import IGalleryPage from '../__types__/IGalleryPage';
 
-const GalleryPageWheel: FC<{ sectionsIds: ESectionIds[] }> = ({ sectionsIds }) => {
-
-  const [currSectionIndex, setCurrSectionIndex] = useState<number>(0);
+const GalleryPageWheel: FC<IGalleryPage> = ({ sectionsIds, currSectionIndex, setCurrSectionIndex }) => {
 
   const handleWheel = (e: WheelEvent) => {
     window.removeEventListener('wheel', handleWheel);

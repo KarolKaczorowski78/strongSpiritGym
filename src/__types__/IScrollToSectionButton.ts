@@ -7,10 +7,12 @@ export default interface IScrollToSectionButton {
   children: ReactNode,
   targetSection: ESectionIds,
   parentId?: string,
+  sideFunction?: () => void,
 }
 
 export interface IScrollToSectionButtonArrow {
   targetSection: ESectionIds,
   content: string,
   parentId?: string,
+  sideFunction?: () => void,
 }

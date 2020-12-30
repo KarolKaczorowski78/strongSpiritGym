@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { Dispatch, FC, SetStateAction, useContext } from 'react';
 import { Home } from '../../../../../websiteTextContent/Locations';
 import { PrimitivesContext } from '../../../../../contexts/primitivesContext';
 import { SectionWithId } from '../../../../atoms/section';
@@ -10,7 +10,7 @@ import ScrollToSectionButtonArrow from '../../../../molecues/ScrollToSectionButt
 
 const { headling, input, button } = Home;
 
-export default function HomeSection() {
+const HomeSection: FC<{ setCurrSectionIndex: Dispatch<SetStateAction<number>> }> = ({ setCurrSectionIndex }) => {
   
   const { currentLanguage } = useContext(PrimitivesContext);
   const isEnglish = currentLanguage === 'ENGLISH';
@@ -23,9 +23,12 @@ export default function HomeSection() {
         <ScrollToSectionButtonArrow 
           targetSection={ ESectionIds.LOCATIONS_PL }
           content={ isEnglish ? button.eng : button.pl }
+          sideFunction={ () => { setCurrSectionIndex(() => 1) } }
         />
       </TextContainer>
       <Img src={ HomeImg } alt="" />
     </SectionWithId>
   )
 }
+
+export default HomeSection;

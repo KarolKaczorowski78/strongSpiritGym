@@ -7,7 +7,7 @@ const Button = styled(ButtonProto)<{ styling: FlattenSimpleInterpolation }>`
   ${({ styling }) => styling};
 `
 
-const ScrollToSectionButton: FC<IScrollToSectionButton> = ({ children, styling, targetSection, parentId }) => {
+const ScrollToSectionButton: FC<IScrollToSectionButton> = ({ children, styling, targetSection, parentId, sideFunction }) => {
   
   const handleClick = () => {
     const targetElement: HTMLElement | null = document.querySelector(`#${targetSection}`);
@@ -16,6 +16,8 @@ const ScrollToSectionButton: FC<IScrollToSectionButton> = ({ children, styling, 
       top: targetElement.offsetTop - 100,
       behavior: 'smooth',
     })
+
+    sideFunction && sideFunction();
   }
 
   return (

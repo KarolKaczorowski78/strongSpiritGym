@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { PrimitivesContext } from '../contexts/primitivesContext';
 import Page from '../templates/page';
 import HomeSection from '../components/organisms/sections/locations/homeSection';
@@ -7,6 +7,7 @@ import LocationSection from '../components/organisms/sections/locations/location
 import { ESectionIds } from '../__types__/ESectionsIds';
 import GalleryPageTouch from '../templates/galleryPageTouch';
 import GalleryPageWheel from '../templates/galleryPageWheel';
+import IGalleryPage from '../__types__/IGalleryPage';
 
 const { LOCATIONS_BR, LOCATIONS_HOME, LOCATIONS_PL, LOCATIONS_USA } = ESectionIds;
 const ids = [LOCATIONS_HOME, LOCATIONS_PL, LOCATIONS_USA, LOCATIONS_BR];
@@ -14,11 +15,18 @@ const ids = [LOCATIONS_HOME, LOCATIONS_PL, LOCATIONS_USA, LOCATIONS_BR];
 export default function Locations() {
 
   const { isTouchDevice, windowHeight } = useContext(PrimitivesContext);
-  console.log(windowHeight > 550);
+  const [currSection, setCurrSection] = useState<number>(0);
+
+  const templateProps: IGalleryPage = {
+    sectionsIds: ids,
+    currSectionIndex: currSection,
+    setCurrSectionIndex: setCurrSection,
+  }
+
   return (
     <Page>
-      { windowHeight > 500 && (isTouchDevice ? <GalleryPageTouch sectionsIds={ ids } /> : <GalleryPageWheel sectionsIds={ ids } />) }
-      <HomeSection />
+      { windowHeight > 500 && (isTouchDevice ? <GalleryPageTouch { ...templateProps } /> : <GalleryPageWheel { ...templateProps } />) }
+      <HomeSection setCurrSectionIndex={ setCurrSection } />
       { LocationsContents.map(location => <LocationSection { ...location } />) }
     </Page>
   )
