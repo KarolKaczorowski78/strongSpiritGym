@@ -6,7 +6,7 @@ import FreePerks from '../views/freePerks';
 import NotFound from '../views/404';
 import JoinUs from '../views/joinUs';
 import Schedule from '../views/schedule';
-// import Classes from '../views/classes';
+import { Locations as LocationsArray } from '../websiteTextContent/Location';
 import Pricing from '../views/pricing';
 import IndividualProgram from '../views/individualProgram';
 import Timer from '../views/timer';
@@ -38,13 +38,6 @@ export const Routes: IRoute[] = [
                 exact: true,
                 component: Schedule,
             },
-            // {
-            //     engName: 'Classes',
-            //     plName: 'Zajęcia',
-            //     path: EChildRoutes.CLASSES,
-            //     exact: true,
-            //     component: Classes,
-            // },
             {
                 engName: 'Pricing',
                 plName: 'Cennik',
@@ -66,21 +59,21 @@ export const Routes: IRoute[] = [
                 plName: 'Polska',
                 path: EChildRoutes.POLAND,
                 exact: true,
-                component: Location,
+                component: () => <Location { ...LocationsArray[0] } />,
             },
             {
                 engName: 'UK',
                 plName: 'UK',
                 path: EChildRoutes.UK,
                 exact: true,
-                component: Location,
+                component: () => <Location { ...LocationsArray[1] } />,
             },
             {
                 engName: 'USA',
                 plName: 'USA',
                 path: EChildRoutes.USA,
                 exact: true,
-                component: Location,
+                component: () => <Location { ...LocationsArray[2] } />,
             }
         ],
     },

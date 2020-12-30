@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Page from '../templates/page';
+import ILocationHomeSection from '../__types__/ILocationHomeSection';
+import LocationSection from '../components/organisms/sections/location/homeSection';
 
-export default function Location() {
-  
-
+const Location: FC<ILocationHomeSection> = (props) => {
   return (
     <Page>
-      <h1>Location</h1>
+      <LocationSection { ...props } />
     </Page>
   )
 }
+
+export default Location

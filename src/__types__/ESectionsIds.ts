@@ -12,4 +12,7 @@ export enum ESectionIds {
   LOCATIONS_PL = 'locations-pl',
   LOCATIONS_USA = 'locations-usa',
   LOCATIONS_BR = 'locations-br',
+  LOCATION_PL = 'location-pl',
+  LOCATION_USA = 'location-usa',
+  LOCATION_BR = 'location-br',
 }
