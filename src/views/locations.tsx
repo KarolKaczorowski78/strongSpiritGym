@@ -1,35 +1,25 @@
-import React, { UIEvent, useState } from 'react';
-import styled from 'styled-components';
+import React, { useContext } from 'react';
+import { PrimitivesContext } from '../contexts/primitivesContext';
 import Page from '../templates/page';
 import HomeSection from '../components/organisms/sections/locations/homeSection';
 import { LocationsContents } from '../websiteTextContent/Locations';
 import LocationSection from '../components/organisms/sections/locations/locationSection';
-import Div from '../components/atoms/div';
+import { ESectionIds } from '../__types__/ESectionsIds';
+import GalleryPageTouch from '../templates/galleryPageTouch';
+import GalleryPageWheel from '../templates/galleryPageWheel';
 
-const Wrapper = styled(Div)`
-  height: calc(100vh - 100px);
-  width: 100%;
-  overflow-y: scroll;
-  min-height: 400px;
-  margin-top: 100px;
-  transition: 2s;
-`;
+const { LOCATIONS_BR, LOCATIONS_HOME, LOCATIONS_PL, LOCATIONS_USA } = ESectionIds;
+const ids = [LOCATIONS_HOME, LOCATIONS_PL, LOCATIONS_USA, LOCATIONS_BR];
 
 export default function Locations() {
 
-  const [scrollValue, setScrollValue] = useState<number>(0);
-  const [isScrolling, setIsScrolling] = useState<boolean>(false);
-  
-  const handleScroll = async (e: UIEvent<HTMLDivElement>) => {
-    const target = e.target as HTMLDivElement;
-  }
-
+  const { isTouchDevice, windowHeight } = useContext(PrimitivesContext);
+  console.log(windowHeight > 550);
   return (
     <Page>
-      <Wrapper onScroll={ handleScroll } id="locations-wrapper">
-        <HomeSection />
-        { LocationsContents.map(location => <LocationSection { ...location } />) }
-      </Wrapper>
+      { windowHeight > 500 && (isTouchDevice ? <GalleryPageTouch sectionsIds={ ids } /> : <GalleryPageWheel sectionsIds={ ids } />) }
+      <HomeSection />
+      { LocationsContents.map(location => <LocationSection { ...location } />) }
     </Page>
   )
 }
