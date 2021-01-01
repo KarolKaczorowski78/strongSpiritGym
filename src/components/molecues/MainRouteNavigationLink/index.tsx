@@ -7,11 +7,17 @@ import ChildRouteNavigationLink from '../ChildRouteNavigationLink';
 import { faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import gsap from 'gsap';
 import { EMainRoutes } from '../../../__types__/ERoutes';
+import { useLocation } from 'react-router-dom';
 
 const MainRouteNavigationLink: FC<IMainRouteNavigationLink> = ({ engName, plName, subTopics, path }) => {
 
+  const { pathname } = useLocation();
   const [areChildLinksVisible, setAreChildRoutesVisible] = useState<boolean>(false);
   const childRouteLinksContainer = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setAreChildRoutesVisible(() => false);
+  }, [pathname])
 
   useEffect(() => {
     const [transformValue, alphaValue] = areChildLinksVisible ? [0, 1] : [-15, 0];
