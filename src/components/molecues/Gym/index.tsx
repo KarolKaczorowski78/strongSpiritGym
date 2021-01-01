@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
 import IGym from '../../../__types__/IGym';
-import { faMapMarkerAlt, faCity, faPhoneSquareAlt, faAt } from '@fortawesome/free-solid-svg-icons';
+import { faMapMarkerAlt, faCity, faPhoneSquareAlt, faAt, faClipboardList } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Container, Adress } from './styles';
+import { Container, Adress, Link } from './styles';
+import { EChildRoutes } from '../../../__types__/ERoutes';
 
 const Gym: FC<IGym> = ({ adress, city, phone, email }) => {
   return (
@@ -25,6 +26,9 @@ const Gym: FC<IGym> = ({ adress, city, phone, email }) => {
         </a>&nbsp;&nbsp;
         { email }
       </Adress>
+      <Link to={ EChildRoutes.SCHEDULE }>
+        <FontAwesomeIcon icon={ faClipboardList } />
+      </Link>
     </Container>
   )
 }

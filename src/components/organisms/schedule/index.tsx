@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React, { FC, useContext, useEffect, useState } from 'react';
 import { PrimitivesContext } from '../../../contexts/primitivesContext';
 import { Table, TableContainer } from './styles';
 import { WeekDays } from '../../../websiteTextContent/Schedule';
-import { exampleSchedule } from '../../../ExampleScheduleData';
 import { EGroupTrainingsHours } from '../../../__types__/EGroupTrainingsHours';
 import BookClassWorkoutButton from '../../molecues/BookClassWorkoutButton';
+import { Schedule as ScheduleAxios } from '../../../axios/endpoints/schedule';
+import { TSchedule } from '../../../__types__/ScheduleTypes';
 
 const isBookable = (hourIndex: number, dayIndex: number) => {
   const today = new Date();
@@ -21,10 +22,19 @@ const isBookable = (hourIndex: number, dayIndex: number) => {
   return false;
 }
 
-const Schedule = () => {
+const Schedule: FC<{ gymId: number }> = ({ gymId }) => {
 
+  const [schedule, setSchedule] = useState<TSchedule | null>(null);
   const { currentLanguage } = useContext(PrimitivesContext);
   const isEnglish = currentLanguage === 'ENGLISH';
+
+  useEffect(() => {
+    (async () => {
+      const data = await ScheduleAxios.getByLocationId(gymId);
+
+      setSchedule(() => data.data.schedule);
+    })()
+  }, [gymId]);
 
   return (
     <TableContainer>
@@ -35,7 +45,7 @@ const Schedule = () => {
               { WeekDays.map(({ eng, pl }) => <th>{ isEnglish ? eng : pl }</th>) }
             </tr>
             {
-              exampleSchedule.map((row, i) => 
+              schedule && schedule.map((row, i) => 
                 <tr key={ i }>
                   <td key={ i + 1 }>{ Object.values(EGroupTrainingsHours)[i] }</td>
                   { row.map((workout, i2) => 
