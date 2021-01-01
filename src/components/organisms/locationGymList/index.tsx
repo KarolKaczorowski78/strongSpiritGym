@@ -29,10 +29,10 @@ const LocationGymList: FC<{ country: ECountries }> = ({ country }) => {
         state={ searchCity }
         setState={ setSearchCity }
       />
-      <LocationsContainer>
+      {/* <LocationsContainer> */}
         { gyms.map(gym => 
           gym.city.toLowerCase().includes(searchCity.toLowerCase()) ? <Gym { ...gym } /> : <></>) }
-      </LocationsContainer>
+      {/* </LocationsContainer> */}
     </Container>
   )
 }
