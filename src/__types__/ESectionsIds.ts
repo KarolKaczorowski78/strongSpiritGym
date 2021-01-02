@@ -15,4 +15,5 @@ export enum ESectionIds {
   LOCATION_PL = 'location-pl',
   LOCATION_USA = 'location-usa',
   LOCATION_BR = 'location-br',
+  INDIVIDUAL_PROGRAMS_HOME = 'individual-programs-home',
 }
