@@ -4,4 +4,5 @@ export default interface IFancyLink {
   linkContent: string,
   linkPath: EChildRoutes | EMainRoutes,
   fontSizeRem?: number,
+  color?: string,
 }
