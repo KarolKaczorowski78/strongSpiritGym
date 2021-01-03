@@ -20,4 +20,5 @@ export enum ESectionIds {
   INDIVIDUAL_PROGRAMS_POWERLIFTING = 'individual-programs-powerlifting',
   INDIVIDUAL_PROGRAMS_STAND_UP = 'individual-programs-stand-up',
   INDIVIDUAL_PROGRAMS_GROUND_GAME = 'individual-programs-ground-game',
+  INDIVIDUAL_PROGRAMS_ABOUT = 'individual-programs-about',
 }
