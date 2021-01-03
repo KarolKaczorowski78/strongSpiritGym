@@ -1,7 +1,7 @@
 import { ESectionIds } from '../__types__/ESectionsIds';
 import IContent from '../__types__/IContent';
 import IProgramSection from '../__types__/IProgramSection';
-import { loremIpsum } from './loremIpsum';
+import { loremIpsum, loremIpsumLong } from './loremIpsum';
 import MmaImg from '../img/individualPrograms/mma.jpg';
 import GroundGameImg from '../img/individualPrograms/groundGame.jpg';
 import StandUpImg from '../img/individualPrograms/standUp.jpg';
@@ -93,3 +93,18 @@ export const Sections: IProgramSection[] = [
     linkPath: EMainRoutes.INDIVIDUAL_PROGRAMS,
   }
 ]
+
+export const AboutSection = {
+  headling: {
+    eng: 'how does it work',
+    pl: 'jak to działa',
+  },
+  p: {
+    eng: loremIpsumLong,
+    pl: loremIpsumLong,
+  },
+  button: {
+    eng: 'Find a program for you',
+    pl: 'Znajdz program dla siebie'
+  }
+}
