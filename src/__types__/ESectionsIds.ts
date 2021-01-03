@@ -16,4 +16,8 @@ export enum ESectionIds {
   LOCATION_USA = 'location-usa',
   LOCATION_BR = 'location-br',
   INDIVIDUAL_PROGRAMS_HOME = 'individual-programs-home',
+  INDIVIDUAL_PROGRAMS_MMA = 'individual-programs-mma',
+  INDIVIDUAL_PROGRAMS_POWERLIFTING = 'individual-programs-powerlifting',
+  INDIVIDUAL_PROGRAMS_STAND_UP = 'individual-programs-stand-up',
+  INDIVIDUAL_PROGRAMS_GROUND_GAME = 'individual-programs-ground-game',
 }
