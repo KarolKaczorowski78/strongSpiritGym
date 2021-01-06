@@ -6,7 +6,9 @@ import MmaImg from '../img/individualPrograms/mma.jpg';
 import GroundGameImg from '../img/individualPrograms/groundGame.jpg';
 import StandUpImg from '../img/individualPrograms/standUp.jpg';
 import PowerliftingImg from '../img/individualPrograms/powerlifting.jpg';
-import { EChildRoutes, EMainRoutes } from '../__types__/ERoutes';
+import { EMainRoutes } from '../__types__/ERoutes';
+// import IIndividualProgramPlanTile from '../__types__/IIndividualProgramPlanTile';
+import { faClipboardList, faGlobeAmericas, faDumbbell, faEdit, faFistRaised } from '@fortawesome/free-solid-svg-icons';
 
 export const headling = {
   firstLine: {
@@ -108,3 +110,41 @@ export const AboutSection = {
     pl: 'Znajdz program dla siebie'
   }
 }
+
+export const Tiles = [
+  {
+    icon: faClipboardList,
+    content: {
+      eng: 'Select a plan',
+      pl: 'Wybierz plan',
+    }
+  },
+  {
+    icon: faGlobeAmericas,
+    content: {
+      eng: 'Select a gym',
+      pl: 'Wybierz klub',
+    }
+  },
+  {
+    icon: faDumbbell,
+    content: {
+      eng: 'Select a coach',
+      pl: 'Wybierz trenera',
+    }
+  },
+  {
+    icon: faEdit,
+    content: {
+      eng: 'Discuss a plan',
+      pl: 'Stwórzcie plan',
+    }
+  },
+  {
+    icon: faFistRaised,
+    content: {
+      eng: 'Train!',
+      pl: 'Trenuj!',
+    }
+  },
+]
