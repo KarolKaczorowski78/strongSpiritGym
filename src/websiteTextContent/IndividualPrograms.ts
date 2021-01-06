@@ -6,8 +6,7 @@ import MmaImg from '../img/individualPrograms/mma.jpg';
 import GroundGameImg from '../img/individualPrograms/groundGame.jpg';
 import StandUpImg from '../img/individualPrograms/standUp.jpg';
 import PowerliftingImg from '../img/individualPrograms/powerlifting.jpg';
-import { EMainRoutes } from '../__types__/ERoutes';
-// import IIndividualProgramPlanTile from '../__types__/IIndividualProgramPlanTile';
+import { EChildRoutes } from '../__types__/ERoutes';
 import { faClipboardList, faGlobeAmericas, faDumbbell, faEdit, faFistRaised } from '@fortawesome/free-solid-svg-icons';
 
 export const headling = {
@@ -61,7 +60,7 @@ export const Sections: IProgramSection[] = [
       eng: 'MMA',
       pl: 'MMA',
     },
-    linkPath: EMainRoutes.INDIVIDUAL_PROGRAMS,
+    linkPath: EChildRoutes.MMA,
     strengths: [.6, .7, .7, .9],
   },
   {
@@ -71,7 +70,7 @@ export const Sections: IProgramSection[] = [
       eng: 'Powerlifting',
       pl: 'Powerlifting',
     },
-    linkPath: EMainRoutes.INDIVIDUAL_PROGRAMS,
+    linkPath: EChildRoutes.POWERLIFTING,
     strengths: [.9, .6, .4, .6],
   },
   {
@@ -81,7 +80,7 @@ export const Sections: IProgramSection[] = [
       eng: 'Stand up',
       pl: 'Walka w stójce',
     },
-    linkPath: EMainRoutes.INDIVIDUAL_PROGRAMS,
+    linkPath: EChildRoutes.STAND_UP,
     strengths: [.4, .7, .9, .9],
   },
   {
@@ -92,7 +91,7 @@ export const Sections: IProgramSection[] = [
       pl: 'Walka w parterze',
     },
     strengths: [.7, .7, .5, .6],
-    linkPath: EMainRoutes.INDIVIDUAL_PROGRAMS,
+    linkPath: EChildRoutes.GROUND_GAME,
   }
 ]
 
