@@ -22,10 +22,11 @@ export const Img = styled(ImgProto)`
   box-shadow: 0 0 20px red;
   border: 1px solid black;
   z-index: 1;
-  min-width: 280px;
+  min-height: 300px;
   @media (max-width: ${EBreakpoints.TABLET_SMALL}) {
     width: 70vw;
     height: auto;
+    min-width: 280px;
   }
 `;
 
