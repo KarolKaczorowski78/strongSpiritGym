@@ -5,4 +5,14 @@ export default interface IIndividualProgramPage {
   homeSection: {
     headling: IContent,
   },
+  aboutSection: {
+    aboutDiscipline: {
+      headling: IContent,
+      content: IContent,
+    } ,
+    aboutProgram: {
+      headling: IContent,
+      content: IContent,
+    },
+  }
 }
