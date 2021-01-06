@@ -15,6 +15,7 @@ import Advisor from '../views/advisor';
 import Location from '../views/location';
 import IRoute from '../__types__/IRoute';
 import { EChildRoutes, EMainRoutes } from '../__types__/ERoutes';
+import { individualProgramPages } from '../websiteTextContent/IndividualProgram';
 
 export const Routes: IRoute[] = [
     {
@@ -89,28 +90,29 @@ export const Routes: IRoute[] = [
                 plName: 'MMA',
                 path: EChildRoutes.MMA,
                 exact: true,
-                component: IndividualProgram,
+                component: () => <IndividualProgram { ...individualProgramPages[0] } />,
             },
             {
                 engName: 'Powerlifting',
                 plName: 'Powerlifting',
                 path: EChildRoutes.POWERLIFTING,
                 exact: true,
-                component: IndividualProgram,
+                component: () => <IndividualProgram { ...individualProgramPages[1] } />,
+                // component: IndividualProgram,
             },
             {
                 engName: 'Stand up',
                 plName: 'Stójka',
                 path: EChildRoutes.STAND_UP,
                 exact: true,
-                component: IndividualProgram,
+                component: () => <IndividualProgram { ...individualProgramPages[2] } />,
             },
             {
                 engName: 'Ground game',
                 plName: 'Parter',
                 path: EChildRoutes.GROUND_GAME,
                 exact: true,
-                component: IndividualProgram,
+                component: () => <IndividualProgram { ...individualProgramPages[3] } />,
             }
         ],
     },

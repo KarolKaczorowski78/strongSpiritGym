@@ -21,4 +21,7 @@ export enum ESectionIds {
   INDIVIDUAL_PROGRAMS_STAND_UP = 'individual-programs-stand-up',
   INDIVIDUAL_PROGRAMS_GROUND_GAME = 'individual-programs-ground-game',
   INDIVIDUAL_PROGRAMS_ABOUT = 'individual-programs-about',
+  INDIVIDUAL_PROGRAM_HOME = 'individual-program-home',
+  INDIVIDUAL_PROGRAM_ABOUT = 'individual-program-about',
+  INDIVIDUAL_PROGRAM_COACHES = 'individual-program-coaches',
 }
