@@ -6,6 +6,7 @@ import DivProto from '../components/atoms/div';
 import Page from '../templates/page';
 import IIndividualProgramPage from '../__types__/IIndividualProgramPage';
 import HomeSection from '../components/organisms/sections/individualProgram/homeSection';
+import AboutSection from '../components/organisms/sections/individualProgram/aboutSection';
 
 const Div = styled(DivProto)`
   position: fixed;
@@ -38,7 +39,7 @@ const Img = styled(ImgProto)`
   height: 100%;
 `;
 
-const IndividualProgram: FC<IIndividualProgramPage> = ({ backgroundImg, homeSection }) => {
+const IndividualProgram: FC<IIndividualProgramPage> = ({ backgroundImg, homeSection, aboutSection }) => {
 
   const { currentLanguage } = useContext(PrimitivesContext);
   const isEnglish = currentLanguage === 'ENGLISH';
@@ -55,6 +56,16 @@ const IndividualProgram: FC<IIndividualProgramPage> = ({ backgroundImg, homeSect
       <HomeSection 
         headling={ isEnglish ? homeSection.headling.eng : homeSection.headling.pl }
         buttonContent={ isEnglish ? 'read more' : 'czytaj dalej' } 
+      />
+      <AboutSection 
+        aboutDiscipline={{
+          headling: isEnglish ? aboutSection.aboutDiscipline.headling.eng : aboutSection.aboutDiscipline.headling.pl,
+          content: isEnglish ? aboutSection.aboutDiscipline.content.eng : aboutSection.aboutDiscipline.content.pl,
+        }}
+        aboutProgram={{
+          headling: isEnglish ? aboutSection.aboutProgram.headling.eng : aboutSection.aboutProgram.headling.pl,
+          content: isEnglish ? aboutSection.aboutProgram.content.eng : aboutSection.aboutProgram.content.pl,
+        }}
       />
     </Page>
   )
