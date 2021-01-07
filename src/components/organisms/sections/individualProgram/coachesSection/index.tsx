@@ -6,6 +6,7 @@ import { ESectionIds } from '../../../../../__types__/ESectionsIds';
 import LocationSwitcher from '../../../locationSwitcher';
 import ICoach from '../../../../../__types__/ICoach';
 import { Coaches } from '../../../../../axios/endpoints/coaches';
+import CoachCard from '../../../../molecues/CoachCard';
 
 const CoachesSection = () => {
 
@@ -23,15 +24,7 @@ const CoachesSection = () => {
   return (
     <SectionWithId id={ ESectionIds.INDIVIDUAL_PROGRAM_COACHES } styling={ SectionStyling }>
       <LocationSwitcher />
-      {
-        coaches.map(({ first_name, last_name, specializations, email }) => 
-          <>
-            <h3>{ `${first_name} ${last_name}` }</h3>
-            <p>{ `Specialization: ${specializations}` }</p>
-            <p>{ `Email adress: ${email}` }</p>
-          </>
-        )
-      }
+      { coaches.map(data => <CoachCard { ...data } /> ) }
     </SectionWithId>
   )
 }
