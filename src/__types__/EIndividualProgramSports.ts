@@ -1,3 +1,5 @@
+import IContent from "./IContent";
+
 export enum EIndividualProgramSports {
   MMA = 'MMA',
   POWERLIFTING = 'POWERLIFTING',
