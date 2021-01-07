@@ -71,6 +71,7 @@ const IndividualProgram: FC<IIndividualProgramPage> = ({ backgroundImg, homeSect
       <CoachesSection 
         headling={ isEnglish ? 'SSG coaches' : 'Trenerzy SSG' }
         p={ isEnglish ? 'Contact a coach and schedule the first meeting' : 'Skontaktuj sie z trenerem i umów sie na pierwsza konsultacje' }
+        button={ isEnglish ? 'Show only coaches for this program' : 'Pokaż tylko trenerów tego programu' }
       />
     </Page>
   )
