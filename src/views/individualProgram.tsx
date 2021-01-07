@@ -7,6 +7,7 @@ import Page from '../templates/page';
 import IIndividualProgramPage from '../__types__/IIndividualProgramPage';
 import HomeSection from '../components/organisms/sections/individualProgram/homeSection';
 import AboutSection from '../components/organisms/sections/individualProgram/aboutSection';
+import CoachesSection from '../components/organisms/sections/individualProgram/coachesSection';
 
 const Div = styled(DivProto)`
   position: fixed;
@@ -67,6 +68,7 @@ const IndividualProgram: FC<IIndividualProgramPage> = ({ backgroundImg, homeSect
           content: isEnglish ? aboutSection.aboutProgram.content.eng : aboutSection.aboutProgram.content.pl,
         }}
       />
+      <CoachesSection />
     </Page>
   )
 }
