@@ -1,5 +1,6 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { PrimitivesContext } from '../contexts/primitivesContext';
+import { LocationContext } from '../contexts/locationContext';
 import Page from '../templates/page';
 import Schedule from '../components/organisms/schedule';
 import H1 from '../components/atoms/h1';
@@ -9,7 +10,7 @@ import Div from '../components/atoms/div';
 import ImgProto from '../components/atoms/img';
 import ScheduleImage from '../img/schedule/backgroundBig.jpg';
 import { getCurrentWeek } from '../universal/getCurrentWeek';
-import ScheduleFilter from '../components/molecues/ScheduleFilter';
+import LocationSwitcher from '../components/organisms/locationSwitcher';
 
 const ScheduleContainer = styled(Div)`
   width: 100%;
@@ -38,8 +39,9 @@ const Img = styled(ImgProto)`
 
 export default function ScheduleView() {
   
+  const { gymId, country } = useContext(LocationContext);
   const { currentLanguage } = useContext(PrimitivesContext)
-  const [currentGymId, setCurrentGymId] = useState<number>(1);
+
   const isEnglish = currentLanguage === 'ENGLISH';
 
   return (
@@ -47,8 +49,8 @@ export default function ScheduleView() {
       <ScheduleContainer>
         <H1 style={{ marginTop: '110px' }}>{ isEnglish ? 'Schedule' : 'Harmonogram' }</H1>
         <P>{ getCurrentWeek() }</P>
-        <ScheduleFilter setState={ setCurrentGymId } />
-        <Schedule gymId={ currentGymId } />
+        <LocationSwitcher />
+        <Schedule gymId={ gymId } country={ country } />
         <Img src={ ScheduleImage } alt="" />
       </ScheduleContainer>
     </Page>

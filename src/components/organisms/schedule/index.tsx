@@ -6,6 +6,7 @@ import { EGroupTrainingsHours } from '../../../__types__/EGroupTrainingsHours';
 import BookClassWorkoutButton from '../../molecues/BookClassWorkoutButton';
 import { Schedule as ScheduleAxios } from '../../../axios/endpoints/schedule';
 import { TSchedule } from '../../../__types__/ScheduleTypes';
+import { ECountries } from '../../../__types__/ECountries';
 
 const isBookable = (hourIndex: number, dayIndex: number) => {
   const today = new Date();
@@ -22,7 +23,7 @@ const isBookable = (hourIndex: number, dayIndex: number) => {
   return false;
 }
 
-const Schedule: FC<{ gymId: number }> = ({ gymId }) => {
+const Schedule: FC<{ gymId: number, country: ECountries }> = ({ gymId, country }) => {
 
   const [schedule, setSchedule] = useState<TSchedule | null>(null);
   const { currentLanguage } = useContext(PrimitivesContext);
@@ -34,7 +35,7 @@ const Schedule: FC<{ gymId: number }> = ({ gymId }) => {
 
       setSchedule(() => data.data.schedule);
     })()
-  }, [gymId]);
+  }, [gymId, country]);
 
   return (
     <TableContainer>
