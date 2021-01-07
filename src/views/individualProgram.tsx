@@ -68,7 +68,10 @@ const IndividualProgram: FC<IIndividualProgramPage> = ({ backgroundImg, homeSect
           content: isEnglish ? aboutSection.aboutProgram.content.eng : aboutSection.aboutProgram.content.pl,
         }}
       />
-      <CoachesSection />
+      <CoachesSection 
+        headling={ isEnglish ? 'SSG coaches' : 'Trenerzy SSG' }
+        p={ isEnglish ? 'Contact a coach and schedule the first meeting' : 'Skontaktuj sie z trenerem i umów sie na pierwsza konsultacje' }
+      />
     </Page>
   )
 }
