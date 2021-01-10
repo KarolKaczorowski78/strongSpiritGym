@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import DivProto from '../../atoms/div';
 import PProto from '../../atoms/p';
 import SpanProto from '../../atoms/span';
+import { EBreakpoints } from '../../../__types__/EBreakpoints';
 
 export const Container = styled(DivProto)`
   width: 300px;
@@ -13,6 +14,9 @@ export const Container = styled(DivProto)`
   margin: 15px 20px;
   border-radius: 15px;
   position: relative;
+  @media (max-width: ${EBreakpoints.MOBILE_BIG}) {
+    width: 260px;
+  }
 `;
 
 export const Intro = styled.h3`
