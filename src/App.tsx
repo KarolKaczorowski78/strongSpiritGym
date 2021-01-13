@@ -5,17 +5,22 @@ import Navigation from './components/organisms/navigation';
 import { GlobalStyle } from './theme/globalStyle';
 import { PrimitivesContextProvider } from './contexts/primitivesContext';
 import { LocationContextProvider } from './contexts/locationContext';
+import { TimerProvider } from './contexts/timerContext';
+import Timer from './components/organisms/Timer';
 
 export default function App() {
   return (
     <Router>
       <PrimitivesContextProvider>
         <LocationContextProvider>
-          <Navigation />
-          <GlobalStyle />
-          <Switch>
-            { RoutesFlattenArray.map(route => <Route { ...route } />) }
-          </Switch>
+          <TimerProvider>
+            <Navigation />
+            <GlobalStyle />
+            <Timer />
+            <Switch>
+              { RoutesFlattenArray.map(route => <Route { ...route } />) }
+            </Switch>
+          </TimerProvider>
         </LocationContextProvider>
       </PrimitivesContextProvider>
     </Router>
