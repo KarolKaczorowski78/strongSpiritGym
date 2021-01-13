@@ -8,4 +8,5 @@ export enum EBreakpoints {
   NAV_BREAK = '1100px',
   OFFER_ADVERTISEMENT_BREAK = '900px',
   GROUP_TRAININGS_INTRO_BREAK = '1200px',
+  TIMER_BREAK = '700px',
 }
