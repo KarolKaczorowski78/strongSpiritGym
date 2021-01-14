@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { PrimitivesContext } from '../../../../contexts/primitivesContext';
 import { TimerContext } from '../../../../contexts/timerContext';
 import { StatusContainer, TimeContainerContainer } from './styles';
 import TimerTemplate from '../../../../templates/timer';
@@ -10,6 +11,8 @@ import { faPause, faCogs, faPlay } from '@fortawesome/free-solid-svg-icons';
 const TrainingView = () => {
 
   const { setIsRunning, isRunning, setRunningStatus, currentRound, runningStatus, roundsAmmount, currentTime, roundLength, restLength } = useContext(TimerContext);
+  const { currentLanguage } = useContext(PrimitivesContext);
+  const isEnglish = currentLanguage === 'ENGLISH';
 
   return (
     <TimerTemplate
@@ -33,8 +36,8 @@ const TrainingView = () => {
       }
     >
       <StatusContainer>
-        { runningStatus && <p>{ runningStatus }</p> }
-        <p>{ `Round: ${currentRound}/${roundsAmmount}` }</p>
+        { runningStatus && <p>{ runningStatus && (runningStatus === 'WORK' ? isEnglish ? 'Work' : 'Praca' : isEnglish ? 'Rest' : 'Odpoczynek') }</p> }
+        <p>{ `${isEnglish ? 'Round' : 'Runda'}: ${currentRound}/${roundsAmmount}` }</p>
       </StatusContainer>
       <TimeContainerContainer>
         <TimeContainer fontSizeRem={ 4 } />

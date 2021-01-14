@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import { Container, Button, ButtonsContainer, TimeContainer } from './styles';
 import ITimeSetter from '../../../__types__/ITimeSetter';
 import Div from '../../atoms/div';
-// import Span from '../../atoms/span';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 

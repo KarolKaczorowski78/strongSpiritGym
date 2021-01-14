@@ -18,7 +18,4 @@ export const TimeContainerContainer = styled(DivProto)`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  * {
-    color: lightgrey;
-  }
 `;
