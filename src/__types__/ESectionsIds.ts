@@ -25,4 +25,6 @@ export enum ESectionIds {
   INDIVIDUAL_PROGRAM_ABOUT = 'individual-program-about',
   INDIVIDUAL_PROGRAM_COACHES = 'individual-program-coaches',
   CALORIES_CALCULATOR = 'calories-calculator',
+  TRAINNG_PERKS_TIMER = 'training-perks-timer',
+  TRAINING_PERKS_CALCULATOR = 'training-perks-calculator',
 }
