@@ -35,7 +35,7 @@ export const Sections: ITrainingPerkSectionLanguages[] = [
       pl: loremIpsumLong,
     },
     images: [CalcImg1, CalcImg2],
-    route: EChildRoutes.TIMER,
+    route: EChildRoutes.KCAL_CALC,
     id: ESectionIds.TRAINNG_PERKS_TIMER,
     link: {
       eng: 'Calculate demand',
