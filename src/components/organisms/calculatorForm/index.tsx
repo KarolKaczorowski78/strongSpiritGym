@@ -1,0 +1,59 @@
+import React, { Dispatch, FC, SetStateAction, useContext } from 'react';
+import { PrimitivesContext } from '../../../contexts/primitivesContext';
+import { Form, Submit, Error } from './styles';
+import { useForm } from 'react-hook-form';
+import FormInput from '../../molecues/FormInput';
+import ICalculatorParams from '../../../__types__/ICalculatorParams';
+import { calculateCalories } from '../../../universal/calculateCalories';
+import Select from '../../atoms/select';
+import Option from '../../atoms/option';
+import Label from '../../atoms/label';
+import { faCalculator } from '@fortawesome/free-solid-svg-icons';
+import { FormElements, Selects } from '../../../websiteTextContent/calculator';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+const CalculatorForm: FC<{ setCaloricDemand: Dispatch<SetStateAction<number | null>> }> = ({ setCaloricDemand }) => {
+
+  const { register, handleSubmit, errors } = useForm();
+  const { currentLanguage } = useContext(PrimitivesContext);
+  const isEnglish = currentLanguage === 'ENGLISH';
+
+  const onSubmit = (data: ICalculatorParams) => {
+    setCaloricDemand(calculateCalories(data));
+  }
+
+  return (
+    <Form onSubmit={ handleSubmit(onSubmit) }>
+      {
+        FormElements.map(({ propName, placeholder, error, reference, name }) =>
+          <>
+            <FormInput 
+              name={ propName.eng.toLowerCase() }
+              placeholder={ placeholder[isEnglish ? 'eng' : 'pl'] }
+              label={ propName[isEnglish ? 'eng' : 'pl'] }
+              reference={ register(reference) }
+              type="number"
+            />
+            { errors[name] && <Error>{ error[isEnglish ? 'eng' : 'pl'] }</Error> }
+          </>
+        )
+      }
+      {
+        Selects.map(select => 
+          <>
+          <Label htmlFor={ select.name }>{ select.label[isEnglish ? 'eng' : 'pl'] }</Label>
+          <Select ref={ register } name={ select.name }>
+            { select.options.map(({ value, eng, pl }) => <Option value={ value }>{ isEnglish ? eng : pl }</Option>) }
+          </Select>  
+          </>
+        )
+      }
+      <Submit type="submit">
+        { isEnglish ? 'Calculate' : 'Oblicz' }!&nbsp;
+        <FontAwesomeIcon icon={ faCalculator } />
+      </Submit>
+    </Form>
+  )
+}
+
+export default CalculatorForm;
