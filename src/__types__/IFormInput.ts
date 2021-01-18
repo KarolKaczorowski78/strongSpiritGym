@@ -1,4 +1,4 @@
-import { FlattenSimpleInterpolation } from "styled-components";
+import { FlattenSimpleInterpolation, StyledComponent } from "styled-components";
 
 export default interface IFormInput {
   name: string,
@@ -8,4 +8,5 @@ export default interface IFormInput {
   reference: any,
   labelStyling?: FlattenSimpleInterpolation,
   inputStyling?: FlattenSimpleInterpolation,
+  Element?: StyledComponent<'input' | 'textarea', any>,
 }
