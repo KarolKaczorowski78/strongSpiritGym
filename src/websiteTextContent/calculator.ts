@@ -1,16 +1,8 @@
 import { loremIpsumLong } from './loremIpsum';
 import IContent from '../__types__/IContent';
-import { RegisterOptions } from 'react-hook-form';
+import IFormInputData from '../__types__/IFormInputData';
 
-interface IFormInputData {
-  name: string,
-  propName: IContent,
-  placeholder: IContent,
-  error: IContent,
-  reference: RegisterOptions,
-}
-
-interface ISelect {
+export interface ISelect {
   name: string,
   label: IContent
   options: { eng: string, pl: string, value: string | number }[]
