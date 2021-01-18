@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import ButtonProto from '../../atoms/button';
-import Span from '../../atoms/span';
 
 export const Form = styled.form`
   display: flex;
@@ -64,10 +63,4 @@ export const Submit = styled(ButtonProto)`
       }
   }
   
-`;
-
-export const Error = styled(Span)`
-  margin: 5px 0 10px;
-  color: red;
-  font-size: .9em;
 `;

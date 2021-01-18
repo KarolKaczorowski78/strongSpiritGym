@@ -1,6 +1,6 @@
 import React, { Dispatch, FC, SetStateAction, useContext } from 'react';
 import { PrimitivesContext } from '../../../contexts/primitivesContext';
-import { Form, Submit, Error } from './styles';
+import { Form, Submit } from './styles';
 import { useForm } from 'react-hook-form';
 import FormInput from '../../molecues/FormInput';
 import ICalculatorParams from '../../../__types__/ICalculatorParams';
@@ -8,6 +8,7 @@ import { calculateCalories } from '../../../universal/calculateCalories';
 import Select from '../../atoms/select';
 import Option from '../../atoms/option';
 import Label from '../../atoms/label';
+import ErrorMessage from '../../atoms/error';
 import { faCalculator } from '@fortawesome/free-solid-svg-icons';
 import { FormElements, Selects } from '../../../websiteTextContent/calculator';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -34,7 +35,7 @@ const CalculatorForm: FC<{ setCaloricDemand: Dispatch<SetStateAction<number | nu
               reference={ register(reference) }
               type="number"
             />
-            { errors[name] && <Error>{ error[isEnglish ? 'eng' : 'pl'] }</Error> }
+            { errors[name] && <ErrorMessage>{ error[isEnglish ? 'eng' : 'pl'] }</ErrorMessage> }
           </>
         )
       }
