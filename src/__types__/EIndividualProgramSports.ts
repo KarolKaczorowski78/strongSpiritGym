@@ -6,3 +6,22 @@ export enum EIndividualProgramSports {
   STAND_UP = 'STAND_UP',
   GROUND_GAME = 'GROUND_GAME',
 }
+
+export const individualProgramSports: IContent[] = [
+  {
+    eng: 'MMA',
+    pl: 'MMA',
+  },
+  {
+    eng: 'Powerlifting',
+    pl: 'Powerlifting',
+  },
+  {
+    eng: 'Stand up',
+    pl: 'Stójka',
+  },
+  {
+    eng: 'Ground game',
+    pl: 'Parter',
+  }
+]
