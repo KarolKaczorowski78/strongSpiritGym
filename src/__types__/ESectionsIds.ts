@@ -27,4 +27,5 @@ export enum ESectionIds {
   CALORIES_CALCULATOR = 'calories-calculator',
   TRAINNG_PERKS_TIMER = 'training-perks-timer',
   TRAINING_PERKS_CALCULATOR = 'training-perks-calculator',
+  JOIN_US = 'join-us',
 }
