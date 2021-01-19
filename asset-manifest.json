@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/strongSpiritGym/static/js/main.35458df1.chunk.js",
-    "main.js.map": "/strongSpiritGym/static/js/main.35458df1.chunk.js.map",
+    "main.js": "/strongSpiritGym/static/js/main.909e213a.chunk.js",
+    "main.js.map": "/strongSpiritGym/static/js/main.909e213a.chunk.js.map",
     "runtime-main.js": "/strongSpiritGym/static/js/runtime-main.54415c8d.js",
     "runtime-main.js.map": "/strongSpiritGym/static/js/runtime-main.54415c8d.js.map",
     "static/js/2.bbbd230b.chunk.js": "/strongSpiritGym/static/js/2.bbbd230b.chunk.js",
@@ -51,6 +51,6 @@
   "entrypoints": [
     "static/js/runtime-main.54415c8d.js",
     "static/js/2.bbbd230b.chunk.js",
-    "static/js/main.35458df1.chunk.js"
+    "static/js/main.909e213a.chunk.js"
   ]
 }
