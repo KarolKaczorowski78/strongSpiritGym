@@ -19,11 +19,11 @@ export default function App() {
             <Navigation />
             <GlobalStyle />
             <Timer />
-            <Switch>
-              <Suspense fallback={ <LoadingComponent /> }>
-                { RoutesFlattenArray.map(route => <Route { ...route } />) }
-              </Suspense>
-            </Switch>
+            <Suspense fallback={ <LoadingComponent /> }>
+              <Switch>
+                  { RoutesFlattenArray.map(route => <Route { ...route } />) }
+              </Switch>
+            </Suspense>
           </TimerProvider>
         </LocationContextProvider>
       </PrimitivesContextProvider>
