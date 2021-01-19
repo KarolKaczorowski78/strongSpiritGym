@@ -26,7 +26,10 @@ const CountrySwitcher: FC<{ countryState: ECountries, setCurrentGymId: Dispatch<
 
   return (
     <Select onChange={ handleChange } ref={ ref }>
-      { gyms.map(({ city, adress, id }) => <option value={ id }>{ `${city}, ${adress}` }</option>) }
+      { gyms.map(({ city, adress, id }) => 
+      <option value={ id } key={ id }>
+        { `${city}, ${adress}` }
+      </option>) }
     </Select>
   )
 }

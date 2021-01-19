@@ -1,22 +1,32 @@
-import React, { FC, useContext } from 'react';
+import React, { FC, useContext, useEffect } from 'react';
 import { PrimitivesContext } from '../../../../../contexts/primitivesContext';
 import { SectionWithId } from '../../../../atoms/section';
 import IProgramSection from '../../../../../__types__/IProgramSection';
-import { SectionStyling, Img, TextContainer, ChartsContainer, CostContainer, BackgroundIcon } from './styles';
+import { SectionStyling, TextContainer, ChartsContainer, CostContainer, BackgroundIcon, ImgStyling } from './styles';
 import H2 from '../../../../atoms/h2';
 import Chart from '../../../../molecues/Chart';
 import FancyLink from '../../../../molecues/FancyLink';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDumbbell, faMoneyCheckAlt } from '@fortawesome/free-solid-svg-icons';
+import { LazyImg } from '../../../../atoms/img';
+import { useInView } from 'react-intersection-observer';
+import gsap from 'gsap';
 
 const ProgramSection: FC<IProgramSection> = ({ id, img, name, linkPath, strengths }) => {
 
   const { currentLanguage } = useContext(PrimitivesContext);
   const isEnglish = currentLanguage === 'ENGLISH';
+  const { inView, ref, entry } = useInView({ triggerOnce: true });
+
+  useEffect(() => {
+    if (inView && entry?.target.childNodes) {
+      gsap.to(entry.target.childNodes, { autoAlpha: 1, stagger: .2 })
+    }
+  }, [inView]);
 
   return (
     <SectionWithId id={ id } styling={ SectionStyling }>
-      <Img src={ img } alt="" />
+      <LazyImg src={ img } styling={ ImgStyling } />
       <TextContainer>
         <H2>{ isEnglish ? name.eng : name.pl }</H2>
         <ChartsContainer>

@@ -25,7 +25,7 @@ const ImageSlider: FC<{ images: string[] }> = ({ images }) => {
 
   return (
     <Container ref={ ref }>
-      { images.map(src => <Img src={ src } alt="" />) }
+      { images.map((src, i) => <Img src={ src } alt="" key={ i } />) }
     </Container>
   )
 }

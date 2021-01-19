@@ -30,7 +30,8 @@ const LocationGymList: FC<{ country: ECountries }> = ({ country }) => {
         setState={ setSearchCity }
       />
       { gyms.map(gym => 
-        gym.city.toLowerCase().includes(searchCity.toLowerCase()) ? <Gym { ...gym } /> : <></>) }
+        gym.city.toLowerCase().includes(searchCity.toLowerCase()) ? 
+          <Gym { ...gym } key={ gym.id } /> : <></>) }
     </Container>
   )
 }

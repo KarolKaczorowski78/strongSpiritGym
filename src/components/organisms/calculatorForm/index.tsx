@@ -1,4 +1,4 @@
-import React, { Dispatch, FC, SetStateAction, useContext } from 'react';
+import React, { Dispatch, FC, Fragment, SetStateAction, useContext } from 'react';
 import { PrimitivesContext } from '../../../contexts/primitivesContext';
 import { Form, Submit } from './styles';
 import { useForm } from 'react-hook-form';
@@ -26,8 +26,8 @@ const CalculatorForm: FC<{ setCaloricDemand: Dispatch<SetStateAction<number | nu
   return (
     <Form onSubmit={ handleSubmit(onSubmit) }>
       {
-        FormElements.map(({ propName, placeholder, error, reference, name }) =>
-          <>
+        FormElements.map(({ propName, placeholder, error, reference, name }, i) =>
+          <Fragment key={ i }>
             <FormInput 
               name={ propName.eng.toLowerCase() }
               placeholder={ placeholder[isEnglish ? 'eng' : 'pl'] }
@@ -36,17 +36,18 @@ const CalculatorForm: FC<{ setCaloricDemand: Dispatch<SetStateAction<number | nu
               type="number"
             />
             { errors[name] && <ErrorMessage>{ error[isEnglish ? 'eng' : 'pl'] }</ErrorMessage> }
-          </>
+          </Fragment>
         )
       }
       {
-        Selects.map(select => 
-          <>
-          <Label htmlFor={ select.name }>{ select.label[isEnglish ? 'eng' : 'pl'] }</Label>
-          <Select ref={ register } name={ select.name }>
-            { select.options.map(({ value, eng, pl }) => <Option value={ value }>{ isEnglish ? eng : pl }</Option>) }
-          </Select>  
-          </>
+        Selects.map((select, i) => 
+          <Fragment key={ i }>
+            <Label htmlFor={ select.name }>{ select.label[isEnglish ? 'eng' : 'pl'] }</Label>
+            <Select ref={ register } name={ select.name }>
+              { select.options.map(({ value, eng, pl }, i2) => 
+                <Option key={ i2 } value={ value }>{ isEnglish ? eng : pl }</Option>) }
+            </Select>  
+          </Fragment>
         )
       }
       <Submit type="submit">

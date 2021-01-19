@@ -12,9 +12,9 @@ export default function OfferSection() {
 
   return (
     <SectionWithId id={ ESectionIds.HOMEPAGE_OFFERS }>
-      {/* 1. Mapped offers */}
       { Offers.map(({ headling, p, linkContent, ...rest }) => 
         <OfferAdvertisement 
+          key={ headling.eng }
           headling={ isEnglish ? headling.eng : headling.pl }
           p={ isEnglish ? p.eng : p.pl }
           linkContent={ isEnglish ? linkContent.eng : linkContent.pl }

@@ -12,7 +12,7 @@ export default function Grouptrainings() {
     <Page>
       <HomeSection />
       {
-        ClassesSection.map(data => <ClassSection { ...data } />)
+        ClassesSection.map(data => <ClassSection { ...data } key={ data.id } />)
       }
       <SeeScheduleSection />
     </Page>

@@ -7,6 +7,7 @@ import BookClassWorkoutButton from '../../molecues/BookClassWorkoutButton';
 import { Schedule as ScheduleAxios } from '../../../axios/endpoints/schedule';
 import { TSchedule } from '../../../__types__/ScheduleTypes';
 import { ECountries } from '../../../__types__/ECountries';
+import LoadingComponent from '../../molecues/Loading';
 
 const isBookable = (hourIndex: number, dayIndex: number) => {
   const today = new Date();
@@ -26,27 +27,31 @@ const isBookable = (hourIndex: number, dayIndex: number) => {
 const Schedule: FC<{ gymId: number, country: ECountries }> = ({ gymId, country }) => {
 
   const [schedule, setSchedule] = useState<TSchedule | null>(null);
+  const [isPending, setIsPending] = useState<boolean>(true);
   const { currentLanguage } = useContext(PrimitivesContext);
   const isEnglish = currentLanguage === 'ENGLISH';
 
   useEffect(() => {
+    setIsPending(() => true);
     (async () => {
       const data = await ScheduleAxios.getByLocationId(gymId);
 
       setSchedule(() => data.data.schedule);
+      setIsPending(() => false);
     })()
   }, [gymId, country]);
 
   return (
     <TableContainer>
+        { isPending && <LoadingComponent /> }
         <Table cellSpacing="0">
           <tbody>
             <tr>
               <td></td>
-              { WeekDays.map(({ eng, pl }) => <th>{ isEnglish ? eng : pl }</th>) }
+              { WeekDays.map(({ eng, pl }) => <th key={ eng }>{ isEnglish ? eng : pl }</th>) }
             </tr>
             {
-              schedule && schedule.map((row, i) => 
+              (!isPending && schedule) && schedule.map((row, i) => 
                 <tr key={ i }>
                   <td key={ i + 1 }>{ Object.values(EGroupTrainingsHours)[i] }</td>
                   { row.map((workout, i2) => 

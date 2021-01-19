@@ -14,6 +14,7 @@ const StatisticCounterContainer = () => {
         <StatisticCounter 
           text={ currentLanguage === 'ENGLISH' ? eng : pl } 
           count={ count } 
+          key={ eng }
         />) 
       }
     </Container>

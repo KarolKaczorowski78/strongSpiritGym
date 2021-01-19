@@ -27,7 +27,7 @@ const Navigation: FC = () => {
         <NavigationLinksContainerStatic visible={ navigationLinksVisibility }>
           { 
             Routes.slice(1, -1).map((route) => 
-              <MainRouteNavigationLink { ...route } />)
+              <MainRouteNavigationLink { ...route } key={ route.engName } />)
           }
           <LanguageSwitcher />
         </NavigationLinksContainerStatic>

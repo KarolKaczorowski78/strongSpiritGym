@@ -19,6 +19,12 @@ export const Container = styled(Div)`
   background: #b3b3b3;
   background: linear-gradient(-90deg, #b3b3b3, #999999, #000000);
   flex-wrap: wrap;
+  transform: scaleX(0);
+  transform-origin: left;
+  & > * {
+    opacity: 0;
+    visibility: 0;
+  }
   @media (max-width: ${EBreakpoints.TABLET}) {
     height: auto;
     background: none;
@@ -37,6 +43,17 @@ export const TextContainer = styled(Div)`
     height: auto;
   }
 `; 
+
+export const ImgStyling = css`
+  transform: rotate(5deg);
+  height: 100%;
+  border: 3px solid black;
+  @media (max-width: ${EBreakpoints.TABLET}) {
+    transform: none;
+    width: 300px;
+    height: auto;
+  }
+`;
 
 export const Img = styled(ImgProto)`
   transform: rotate(5deg);

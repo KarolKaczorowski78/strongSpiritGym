@@ -17,6 +17,19 @@ export const SectionStyling = css`
   }
 `;
 
+export const ImgStyling = css`
+  height: calc(100vh - 200px);
+  box-shadow: 0 0 20px red;
+  border: 1px solid black;
+  z-index: 1;
+  min-height: 300px;
+  min-width: 280px;
+  @media (max-width: ${EBreakpoints.TABLET_SMALL}) {
+    width: 70vw;
+    height: auto;
+  }
+`;
+
 export const Img = styled(ImgProto)`
   height: calc(100vh - 200px);
   box-shadow: 0 0 20px red;

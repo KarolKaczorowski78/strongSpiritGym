@@ -27,7 +27,7 @@ export default function Locations() {
     <Page>
       { windowHeight > 500 && (isTouchDevice ? <GalleryPageTouch { ...templateProps } /> : <GalleryPageWheel { ...templateProps } />) }
       <HomeSection setCurrSectionIndex={ setCurrSection } />
-      { LocationsContents.map(location => <LocationSection { ...location } />) }
+      { LocationsContents.map(location => <LocationSection { ...location } key={ location.id } />) }
     </Page>
   )
 }

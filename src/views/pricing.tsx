@@ -38,6 +38,7 @@ export default function PricingView() {
             p={ isEnglish ? p.eng : p.pl }
             price={ isEnglish ? `Buy now for $${price.eng}` : `Kup teraz za ${price.pl} zł` }
             img={ img }
+            key={ headling }
           />)
         }
       </PricingContainer>

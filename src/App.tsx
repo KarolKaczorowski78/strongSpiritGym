@@ -21,7 +21,7 @@ export default function App() {
             <Timer />
             <Suspense fallback={ <LoadingComponent /> }>
               <Switch>
-                  { RoutesFlattenArray.map(route => <Route { ...route } />) }
+                  { RoutesFlattenArray.map(route => <Route { ...route } key={ route.engName } />) }
               </Switch>
             </Suspense>
           </TimerProvider>

@@ -26,6 +26,7 @@ export default function Freeperks() {
         headling={ headling[isEnglish ? 'eng' : 'pl'] }
         p={ p[isEnglish ? 'eng' : 'pl'] }
         link={ link[isEnglish ? 'eng' : 'pl'] }
+        key={ id }
       />) }
     </Page>
   )

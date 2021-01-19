@@ -11,7 +11,7 @@ export default function Individualprograms() {
     <Page>
       <HomeSection />
       <AboutSection />
-      { Sections.map(section => <ProgramSection { ...section } />) }
+      { Sections.map(section => <ProgramSection { ...section } key={ section.id } />) }
     </Page>
   )
 }

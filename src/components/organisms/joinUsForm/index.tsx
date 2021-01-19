@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { Fragment, useContext } from 'react';
 import { PrimitivesContext } from '../../../contexts/primitivesContext';
 import { LocationContext } from '../../../contexts/locationContext';
 import { Form, Submit } from './styles';
@@ -33,8 +33,8 @@ const JoinUsForm = () => {
   return (
     <Form onSubmit={ handleSubmit(onSubmit) }>
       {
-        Inputs.map(({ error, name, placeholder, propName, reference, Element,  }) => 
-          <>
+        Inputs.map(({ error, name, placeholder, propName, reference, Element,  }, i) => 
+          <Fragment key={ i }>
             <FormInput 
               name={ name }
               placeholder={ placeholder[isEnglish ? 'eng' : 'pl'] }
@@ -44,7 +44,7 @@ const JoinUsForm = () => {
               type="text"
             />
             { errors[name] && <ErrorMessage>{ error[isEnglish ? 'eng' : 'pl'] }</ErrorMessage> }
-          </>
+          </Fragment>
         )
       }
       <Label htmlFor="gym">{ isEnglish ? 'Location' : 'Lokalizacja' }</Label>
@@ -52,7 +52,7 @@ const JoinUsForm = () => {
       <Label htmlFor="specialization">{ isEnglish ? 'Specialization' : 'Specializacja' }</Label>
       <Select name="specialization" ref={ register }>
         { individualProgramSports.map(({ eng, pl }, i) => 
-          <Option value={ Object.values(EIndividualProgramSports)[i] }>
+          <Option value={ Object.values(EIndividualProgramSports)[i] } key={ i }>
             { isEnglish ? eng : pl }
           </Option>) 
         }

@@ -1,8 +1,7 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Div from '../../atoms/div';
 import ImgProto from '../../atoms/img';
 import ButtonProto from '../../atoms/button';
-import PProto from '../../atoms/p';
 
 export const Container = styled(Div)`
   width: 300px;
@@ -10,9 +9,17 @@ export const Container = styled(Div)`
   position: relative;
   margin: 20px 10px;
   transition: transform .3s ease-out;
+  opacity: 0;
+  visibility: hidden;
   &:hover {
     transform: translateY(-7px);
   }
+`;
+
+export const ImgStyling = css`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 export const Img = styled(ImgProto)`

@@ -36,7 +36,7 @@ const MainRouteNavigationLink: FC<IMainRouteNavigationLink> = ({ engName, plName
             <FontAwesomeIcon icon={ areChildLinksVisible ? faAngleUp : faAngleDown } />
           </ShowSubTopicsButton>
           <ChildRouteLinksContainer ref={ childRouteLinksContainer }>
-            { subTopics.map((childRoute) => <ChildRouteNavigationLink { ...childRoute } />) }
+            { subTopics.map((childRoute) => <ChildRouteNavigationLink { ...childRoute } key={ childRoute.engName } />) }
           </ChildRouteLinksContainer>
         </>
       }

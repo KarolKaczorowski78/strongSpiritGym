@@ -22,6 +22,12 @@ export const SectionStyling = css`
   min-height: 300px;
 `;
 
+export const ImgStyling = css`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
 export const Img = styled(ImgProto)`
   width: 100%;
   height: 100%;
