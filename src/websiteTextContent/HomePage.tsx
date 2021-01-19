@@ -1,5 +1,5 @@
 import IOffer from '../__types__/IOffer';
-import { EChildRoutes } from '../__types__/ERoutes';
+import { EChildRoutes, EMainRoutes } from '../__types__/ERoutes';
 import IStatisticsCounter from '../__types__/IStatisticCounter';
 import MartialArtsOfferImg from '../img/homePage/martialArtsOffer.jpg';
 import StrengthAndConditioningImg from '../img/homePage/strengthOffer.jpg';
@@ -50,7 +50,7 @@ export const Offers: IOffer[] = [
       eng: 'Lookup classes',
       pl: 'Zobacz grupy',
     },
-    linkPath: EChildRoutes.CLASSES,
+    linkPath: EChildRoutes.SCHEDULE,
   },
   {
     headling: {
@@ -66,7 +66,7 @@ export const Offers: IOffer[] = [
       eng: 'Lookup offer',
       pl: 'Zobacz ofertę',
     },
-    linkPath: EChildRoutes.SCHEDULE,
+    linkPath: EMainRoutes.INDIVIDUAL_PROGRAMS,
   },
 ];
 
