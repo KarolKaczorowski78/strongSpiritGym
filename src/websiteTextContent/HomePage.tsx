@@ -4,7 +4,7 @@ import IStatisticsCounter from '../__types__/IStatisticCounter';
 import MartialArtsOfferImg from '../img/homePage/martialArtsOffer.jpg';
 import StrengthAndConditioningImg from '../img/homePage/strengthOffer.jpg';
 import IndividualProgramsImg from '../img/homePage/individualOffer.jpg';
-import { loremIpsum } from './loremIpsum';
+import { loremIpsum, loremIpsumLong } from './loremIpsum';
 
 export const HomeSection = {
   headling: {
@@ -87,3 +87,18 @@ export const StatisticsCounter: IStatisticsCounter[] = [
     pl: 'Placówek na całym świecie',
   }
 ]
+
+export const TrainingPerksSection = {
+  headling: {
+    eng: 'Improve Your training schedule',
+    pl: 'Ulepsz swoj plan treningowy',
+  },
+  p: {
+    eng: loremIpsumLong,
+    pl: loremIpsumLong,
+  },
+  link: {
+    eng: 'View training perks',
+    pl: 'Dodatki treningowe',
+  }
+}
